@@ -1,0 +1,183 @@
+@media only screen and (max-width: 1023px) {
+  .header {
+    background: url(../img/bike.jpg) center no-repeat #1f1f1f;
+    background-size: cover;
+  }
+  .header__body {
+    height: 340px;
+  }
+  .logo {
+    position: absolute;
+    left: 22px;
+    top: 25px;
+    z-index: 1;
+  }
+  .header__burger {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #0ad9c6;
+  }
+  .header__burger span {
+    position: absolute;
+    background-color: #000000;
+    width: 22.5px;
+    height: 1px;
+    left: 13.75px;
+    top: 24.75px;
+    z-index: 10;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+  }
+  .header__burger:before,
+  .header__burger:after {
+    content: " ";
+    position: absolute;
+    background-color: #000000;
+    width: 22.5px;
+    height: 1px;
+    left: 13.75px;
+    z-index: 10;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+  }
+  .header__burger:before {
+    top: 18.5px;
+    z-index: 10;
+  }
+  .header__burger:after {
+    bottom: 18px;
+    z-index: 10;
+  }
+  .header__burger.active span {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  .header__burger.active:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background-color: #48494d;
+  }
+  .header__burger.active:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: 18.5px;
+    background-color: #48494d;
+  }
+  .menu {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    background-color: #ffffff;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+  }
+  .menu.active {
+    right: 0;
+    z-index: 2;
+  }
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 100px 0 138px 0;
+  }
+  .menu__link {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 140%;
+    color: #48494d;
+  }
+  .menu__list li {
+    background: #f6f6f6;
+    padding: 17px 16px;
+    margin-bottom: 30px;
+  }
+  .shop {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 134px;
+  }
+  .shop__info {
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .shop__title,
+  .shop__text {
+    text-align: center;
+  }
+  .shop__title {
+    font-size: 30px;
+    line-height: 140%;
+    margin-bottom: 20px;
+  }
+  .shop__text {
+    font-size: 18px;
+    line-height: 178%;
+  }
+  .form {
+    width: 70%;
+    margin: 150px auto;
+  }
+  .form__name {
+    font-size: 18px;
+    line-height: 156%;
+    color: #000000;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header__body {
+    width: 100%;
+    height: 390px;
+  }
+  .logo {
+    left: 16px;
+    top: 15px;
+  }
+  .shop {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 120px;
+  }
+  .shop__info {
+    width: 90%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    margin-right: 0px;
+  }
+  .shop__title,
+  .shop__text {
+    text-align: center;
+  }
+  .shop__title {
+    font-size: 30px;
+    line-height: 140%;
+    margin-bottom: 20px;
+  }
+  .form {
+    width: 74%;
+    margin: 150px auto;
+  }
+  .form__name {
+    font-size: 18px;
+    line-height: 156%;
+    color: #000000;
+  }
+}
+/*# sourceMappingURL=header media.css.map */
