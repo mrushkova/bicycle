@@ -1,0 +1,52 @@
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+  .footer__body {
+    width: 100%;
+    margin: 70px 35px;
+  }
+  .footer__title {
+    font-size: 24px;
+    line-height: 125%;
+    margin-bottom: 20px;
+  }
+
+  .footer__text {
+    margin-bottom: 20px;
+  }
+
+  .footer__map {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .footer__body {
+    width: 100%;
+    margin: 70px 0;
+  }
+  .footer__title {
+    font-size: 18px;
+    line-height: 167%;
+  }
+
+  .footer__text {
+    margin-bottom: 25px;
+  }
+
+  .footer__map {
+    max-height: 250px;
+    margin-bottom: 30px;
+  }
+
+  .footer__contacts {
+    flex-direction: column;
+  }
+  .footer__email {
+    margin-left: 26px;
+    margin-right: 0;
+    margin-bottom: 22px;
+    align-content: center;
+  }
+}

@@ -52,17 +52,27 @@ body {
 }
 
 .header {
+  display: flex;
   width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.header__wrapper {
+  width: 100%;
+  height: 100%;
   background: url(../img/bike.jpg) center top no-repeat #1f1f1f;
   background-size: cover;
-  position: relative;
+  position: absolute;
+  top: 0;
 }
 
 .header__body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 60%;
-  height: 100vh;
+  height:80%;
   margin: auto;
 }
 
@@ -118,8 +128,8 @@ body {
 
 .shop {
   width: 100%;
-  margin-top: 260px;
 }
+
 .shop__info {
   display: flex;
   flex-direction: column;

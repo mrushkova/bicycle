@@ -1,10 +1,16 @@
 @media only screen and (max-width: 1023px) {
   .header {
+    height: 100vh;
+  }
+  .header__wrapper {
+    height: 50%;
     background: url(../img/bike.jpg) center no-repeat #1f1f1f;
     background-size: cover;
+    position: absolute;
+    top: 0;
   }
   .header__body {
-    height: 340px;
+    padding-top: 20%;
   }
   .logo {
     position: absolute;
@@ -93,6 +99,18 @@
     line-height: 140%;
     color: #48494d;
   }
+  .menu__li {
+    position: relative;
+  }
+  .menu__li::after {
+    content: url(../img/Shape.svg);
+    display: inline-block;
+    width: 12px;
+    height: 7.4px;
+    position: absolute;
+    right: 25px;
+    z-index: 2;
+  }
   .menu__list li {
     background: #f6f6f6;
     padding: 17px 16px;
@@ -103,7 +121,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 134px;
   }
   .shop__info {
     width: 100%;
@@ -124,12 +141,13 @@
     margin-bottom: 20px;
   }
   .shop__text {
+    height: 96px;
     font-size: 18px;
     line-height: 178%;
   }
   .form {
     width: 70%;
-    margin: 150px auto;
+    margin: 150px auto 70px;
   }
   .form__name {
     font-size: 18px;
@@ -139,20 +157,20 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .header__wrapper {
+    height: 60%;
+    background: url(../img/bike.jpg) top center no-repeat #1f1f1f;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+  }
   .header__body {
     width: 100%;
-    height: 390px;
+    padding-top: 120px;
   }
   .logo {
     left: 16px;
     top: 15px;
-  }
-  .shop {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-top: 120px;
   }
   .shop__info {
     width: 90%;
@@ -172,7 +190,7 @@
   }
   .form {
     width: 74%;
-    margin: 150px auto;
+    margin: 170px auto 70px;
   }
   .form__name {
     font-size: 18px;
