@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1023px) {
   .header {
-    height: 100vh;
+    min-height: 100vh;
   }
   .header__wrapper {
     height: 50%;
@@ -10,7 +10,7 @@
     top: 0;
   }
   .header__body {
-    padding-top: 20%;
+    padding-top: 134px;
   }
   .logo {
     position: absolute;
@@ -84,7 +84,7 @@
   }
   .menu.active {
     right: 0;
-    z-index: 2;
+    z-index: 9;
   }
   .menu__list {
     -webkit-box-orient: vertical;
@@ -109,7 +109,7 @@
     height: 7.4px;
     position: absolute;
     right: 25px;
-    z-index: 2;
+    z-index: 9;
   }
   .menu__list li {
     background: #f6f6f6;
@@ -190,7 +190,7 @@
   }
   .form {
     width: 74%;
-    margin: 170px auto 70px;
+    margin: 190px auto 70px;
   }
   .form__name {
     font-size: 18px;

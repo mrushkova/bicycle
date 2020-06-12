@@ -1,0 +1,117 @@
+.bicycles {
+  widows: 100%;
+  background-color: #f6f7f9;
+}
+
+.bicycles__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+
+.bicycles__title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: -0.005em;
+  color: #1f1f1f;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.bicycles__types {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bicycles__type {
+  width: 30%;
+  margin-right: 3.333%;
+}
+
+.bicycles__type:last-child {
+  margin-right: 0;
+}
+
+.bicycles__photo {
+  display: flex;
+  background-size: cover;
+  position: relative;
+  border-radius: 10px;
+  z-index:3;
+}
+
+.bicycles__photo--road {
+  background-image: url(../img/roadbike.png);
+  width: 342px;
+  height: 503px;
+  position: relative;
+  z-index:3;
+}
+
+.bicycles__photo--road::before {
+  content: url(../img/Ellipse1.png);
+  display: block;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 156px;
+  left: -60px;
+  z-index: -1;
+}
+
+.bicycles__photo--mountain {
+  background-image: url(../img/mountainbike.png);
+  width: 342px;
+  height: 566px;
+}
+
+.bicycles__photo--mountain::before {
+    content: url(../img/Rectangle3.png);
+    display: block;
+    width: 47px;
+    height: 47px;
+    position: absolute;
+    top: -18px;
+    left: -19px;
+    z-index: 1;
+  }
+
+  .bicycles__photo--mountain::after {
+    content: url(../img/Rectangle7.png);
+    display: block;
+    width: 47px;
+    height: 47px;
+    position: absolute;
+    bottom: -23px;
+    right: -23px;
+    z-index: 1;
+  }
+
+.bicycles__photo--child {
+  background-image: url(../img/childbike.png);
+  width: 342px;
+  height: 512.59px;
+}
+
+.bicycles__photo--child::before {
+    content: url(../img/Ellipse2.png);
+    display: block;
+    width: 95px;
+height: 95px;
+    position: absolute;
+    top: -36px;
+    right: -36px;
+    z-index: 1;
+  }
+
+.bicycles__name {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 155%;
+  text-align: center;
+  letter-spacing: -0.5px;
+  color: #000000;
+}

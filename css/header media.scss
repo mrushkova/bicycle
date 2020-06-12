@@ -3,11 +3,11 @@
 
 @media only screen and (max-width: 1023px) {
   .header {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .header__wrapper {
-    height: 50%;
+   height: 50%;
     background: url(../img/bike.jpg) center no-repeat #1f1f1f;
     background-size: cover;
     position: absolute;
@@ -15,7 +15,7 @@
   }
 
   .header__body {
-    padding-top: 20%;
+    padding-top: 134px;
   }
 
   .logo {
@@ -87,7 +87,7 @@
 
   .menu.active {
     right: 0;
-    z-index: 2;
+    z-index: 9;
   }
   .menu__list {
     flex-direction: column;
@@ -111,7 +111,7 @@
     height: 7.4px;
     position: absolute;
     right: 25px;
-    z-index: 2;
+    z-index: 9;
   }
 
   .menu__list li {
@@ -195,7 +195,7 @@
 
   .form {
     width: 74%;
-    margin: 170px auto 70px;
+    margin: 190px auto 70px;
   }
 
   .form__name {

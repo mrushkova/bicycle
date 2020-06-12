@@ -29,6 +29,7 @@ line-height: 189%;
 @media only screen and (max-width: 767px) {
     .about__body {
         width: 100%;
+        margin-top: 70px;
       }
       .about__facts {
         flex-flow: column;
