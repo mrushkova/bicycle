@@ -4,7 +4,7 @@ const htmlValidator = require('gulp-w3c-html-validator')
 const bemValidator = require('gulp-html-bem-validator')
 const config = require('../config')
 
-module.exports = function pug2html() {
+module.exports = function html() {
   return gulp.src('src/**/*.html')
     .pipe(plumber())
     .pipe(htmlValidator())
