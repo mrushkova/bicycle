@@ -1,0 +1,73 @@
+{
+  "name": "bicycle",
+  "version": "1.0.0",
+  "description": "Bicycle",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrushkova/bicycle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrushkova/bicycle/issues"
+  },
+  "homepage": "https://github.com/mrushkova/bicycle#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "acorn": "^7.3.1",
+    "babel-loader": "^8.1.0",
+    "browser-sync": "^2.26.7",
+    "circular-dependency-plugin": "^5.2.0",
+    "del": "^5.1.0",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "editorconfig-cli": "^0.3.0",
+    "eslint": "^7.2.0",
+    "eslint-config-htmlacademy": "^0.5.2",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-html-bem-validator": "^1.0.5",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-shorthand": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svg-symbols": "^3.2.3",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-w3c-html-validator": "^2.0.1",
+    "node-sass": "^4.14.1",
+    "stylelint": "^13.6.0",
+    "stylelint-config-htmlacademy": "^0.1.4",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-scss": "^3.17.2",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.{sass,scss}"
+  ]
+}
