@@ -59,6 +59,7 @@ body {
     letter-spacing: -0.005em;
     color: #1f1f1f;
     text-align: center;
+    margin: 0;
   }
 }
 
@@ -460,13 +461,13 @@ body {
   .about__body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 150px 137px 130px;
+    justify-content: flex-start;
+    padding: 150px 137px;
     box-sizing: border-box;
   }
 
   .about__title {
-    margin: 2px 0 50px 15px;
+    margin: 0 0 50px 15px;
   }
 
   .about__facts {
@@ -501,7 +502,6 @@ body {
   .about__fact {
     position: relative;
     max-width: 263px;
-    margin: 0;
     margin-right: 38px;
     padding-top: 50px;
     text-align: center;
@@ -516,6 +516,7 @@ body {
     line-height: 34px;
     letter-spacing: -0.5px;
     color: #000000;
+    margin: 0;
   }
 
   .about__fact li {
@@ -529,17 +530,22 @@ body {
 
   @media only screen and (max-width: 1023px) {
     .about__body {
-      padding: 0 106px;
+      padding: 0 106px 30px 106px;
+    }
+    .about__facts ol {
+      flex-flow: row wrap;
+    }
+    .about__title {
+      margin: 0 0 30px 0;
     }
 
     .about__title h2 {
       font-size: 24px;
       line-height: 41px;
-      margin: 0 0 30px 0;
     }
 
     .about__fact {
-      margin: 10px 30px 40px 0;
+      margin: 0 30px 45px 0;
     }
 
     .about__fact:nth-child(2n) {
@@ -554,7 +560,7 @@ body {
 
   @media only screen and (max-width: 767px) {
     .about__body {
-      padding: 70px 15px;
+      padding: 70px 15px 20px;
     }
     .about__facts ol {
       flex-flow: column;
@@ -564,7 +570,7 @@ body {
     .about__title {
       max-width: 290px;
       text-align: center;
-      margin: auto;
+      margin: 0 auto 30px;
     }
 
     .about__fact {
@@ -590,18 +596,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 1440px;
     margin: 0 auto;
-    padding: 150px 145px;
+    padding: 150px 145px 150px 169px;
   }
 
   .bicycles__title {
-    margin-bottom: 60px;
+    padding-right: 30px;
+    padding-top: 5px;
   }
   .bicycles__types {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 50px;
   }
   .bicycles__type {
     margin-right: 50px;
@@ -622,7 +629,9 @@ body {
     max-width: 100%;
     height: auto;
   }
-
+  .bicycles__photo--road {
+    padding-top: 10px;
+  }
   .bicycles__photo--road::before {
     content: "";
     display: block;
@@ -636,7 +645,9 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
   }
-
+  .bicycles__photo--mountain {
+    margin-top: 39px;
+  }
   .bicycles__photo--mountain::before {
     content: "";
     display: block;
@@ -682,10 +693,100 @@ body {
   .bicycles__name {
     font-weight: 600;
     font-size: 22px;
-    line-height: 155%;
+    line-height: 34px;
     text-align: center;
     letter-spacing: -0.5px;
     color: #000000;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    .bicycles__body {
+      display: flex;
+      padding: 50px 89px 70px;
+    }
+
+    .bicycles__title {
+      padding: 0;
+    }
+    .bicycles__title h2 {
+      font-size: 24px;
+      line-height: 41px;
+    }
+    .bicycles__types {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      padding-top: 30px;
+    }
+
+    .bicycles__type {
+      margin-bottom: 28px;
+    }
+    .bicycles__type:nth-child(2) {
+      margin-right: 0;
+    }
+
+    .bicycles__photo img {
+      width: 270px;
+      height: 300px;
+      overflow: hidden;
+      object-fit: fill;
+    }
+
+    .bicycles__photo--road {
+      padding-top: 0;
+    }
+
+    .bicycles__photo--road::before {
+      width: 47.03%;
+      height: 42.33%;
+      top: 67%;
+      left: -13.7%;
+    }
+
+    .bicycles__photo--mountain {
+      margin-top: 0;
+    }
+    .bicycles__photo--mountain::before {
+      display: none;
+    }
+
+    .bicycles__photo--mountain::after {
+      display: none;
+    }
+
+    .bicycles__photo--child::before {
+      width: 25.18%;
+      height: 22.66%;
+      top: -6.24%;
+      right: -10.52%;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .bicycles__body {
+      display: flex;
+      padding: 50px 25px 70px;
+      align-items: center;
+    }
+    .bicycles__types {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      padding-top: 30px;
+    }
+    .bicycles__type {
+      margin-right: 0;
+      margin-bottom: 18px;
+    }
+
+    .bicycles__photo--road::before {
+      left: -8.88%;
+    }
+
+    .bicycles__photo--child::before {
+      right: -5.55%;
+    }
   }
 }
 
@@ -698,6 +799,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 150px 0 98px 0;
   }
 
   .footer__title {
@@ -738,7 +840,6 @@ body {
     flex-direction: row;
     align-items: center;
     padding-left: 27px;
-    padding-bottom: 98px;
   }
   .footer__contacts a {
     font-size: 16px;
