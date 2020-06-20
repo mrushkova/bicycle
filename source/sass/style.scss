@@ -64,18 +64,13 @@ body {
 }
 
 .header {
-  display: flex;
   width: 100%;
-  min-height: 753px;
-  position: relative;
 
   .header__wrapper {
     width: 100%;
-    min-height: 753px;
+    min-height: 825px;
     background: url(../img/bike.jpg) center top no-repeat #1f1f1f;
     background-size: cover;
-    position: absolute;
-    top: 0;
   }
 
   .header__body {
@@ -85,7 +80,7 @@ body {
     padding-bottom: 50px;
     padding-left: 19.44%;
     padding-right: 19.44%;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .header__burger {
@@ -246,16 +241,26 @@ body {
   @media only screen and (max-width: 1023px) {
     .header__wrapper {
       width: 100%;
-      min-height: 0;
-      max-height: 340px;
-      background: url(../img/bike.jpg) center no-repeat #1f1f1f;
-      background-size: cover;
-      position: absolute;
-      top: 0;
+      min-height: 754px;
+      background: none;
+      position: relative;
+      &::before {
+        content: " ";
+        background: url(../img/bike.jpg) center no-repeat #1f1f1f;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 340px;
+        z-index: 1;
+      }
     }
 
     .header__body {
       padding: 0;
+      position: relative;
+      z-index: 3;
     }
 
     .logo {
@@ -273,6 +278,7 @@ body {
       height: 50px;
       background-color: #0ad9c6;
       border: none;
+      z-index: 10;
     }
 
     .header__burger span {
@@ -303,6 +309,10 @@ body {
       bottom: 18px;
       z-index: 10;
     }
+    .header__burger.active {
+      background-color: transparent;
+    }
+    
     .header__burger.active span {
       transform: scale(0);
     }
@@ -412,16 +422,19 @@ body {
   }
 
   @media only screen and (max-width: 767px) {
-    .header {
-      max-height: 750px;
-    }
 
-    .header__wrapper {
-      height: 100%;
-      min-height: 390px;
-      background: url(../img/bike.jpg) center center no-repeat #1f1f1f;
-      background-size: cover;
-    }
+    .header__wrapper::before {
+        content: " ";
+        background: url(../img/bike.jpg) center no-repeat #1f1f1f;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 390px;
+        z-index: 1;
+      }
+
     .header__body {
       padding: 0 16px;
     }
@@ -463,7 +476,9 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding: 150px 137px;
-    box-sizing: border-box;
+    max-width: 1166px;
+    margin:0 auto;
+
   }
 
   .about__title {
@@ -596,6 +611,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 1126px;
     margin: 0 auto;
     padding: 150px 145px 150px 169px;
   }
@@ -730,7 +746,8 @@ body {
       width: 270px;
       height: 300px;
       overflow: hidden;
-      object-fit: fill;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
     .bicycles__photo--road {
@@ -802,10 +819,6 @@ body {
     padding: 150px 0 98px 0;
   }
 
-  .footer__title {
-    margin-bottom: 30px;
-  }
-
   .footer__title h2 {
     margin: 0;
   }
@@ -826,12 +839,12 @@ body {
   .footer__map {
     width: 100%;
     height: 100%;
-    margin-bottom: 35px;
   }
 
   .footer__map iframe {
     width: 957px;
     height: 530px;
+    margin: 30px 35px 35px;
   }
 
   .footer__contacts {
