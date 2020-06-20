@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/mrushkova/bicycle#readme",
   "devDependencies": {
-    "gulp-w3c-html-validator": "^2.0.1",
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "9.5.x",
     "browser-sync": "2.26.x",
