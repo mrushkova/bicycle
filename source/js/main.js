@@ -1,11 +1,13 @@
 'use strict';
 
 var burger = document.querySelector('.header__burger');
+var body = document.querySelector('body');
 var menu = document.querySelector('.menu');
 
 burger.addEventListener('click', function () {
   burger.classList.toggle('active');
   menu.classList.toggle('active');
+  body.classList.toggle('lock');
 }
 );
 

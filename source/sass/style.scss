@@ -52,3 +52,8 @@ body {
     margin: 0;
   }
 }
+
+body.lock {
+  position: fixed;
+  overflow: hidden;
+}

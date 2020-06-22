@@ -308,7 +308,7 @@ template {
   .header .header__wrapper {
     width: 100%;
     min-height: 825px;
-    background: url(../img/bike.jpg) center top no-repeat #1f1f1f;
+    background: url(../img/bike@1x.jpg) center top no-repeat #1f1f1f;
     background-size: cover; }
   .header .header__body {
     display: flex;
@@ -443,6 +443,10 @@ template {
   .header .form__submit:focus {
     color: #ffffff;
     border: 3px solid #ffffff; }
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .header .header__wrapper {
+      background: url(../img/bike@2x.jpg) center top no-repeat #1f1f1f;
+      background-size: cover; } }
   @media only screen and (max-width: 1023px) {
     .header .header__wrapper {
       width: 100%;
@@ -451,7 +455,7 @@ template {
       position: relative; }
       .header .header__wrapper::before {
         content: " ";
-        background: url(../img/bike.jpg) center no-repeat #1f1f1f;
+        background: url(../img/bike@1x.jpg) center no-repeat #1f1f1f;
         background-size: cover;
         position: absolute;
         top: 0;
@@ -502,7 +506,8 @@ template {
       bottom: 18px;
       z-index: 10; }
     .header .header__burger.active {
-      background-color: transparent; }
+      background-color: transparent;
+      position: fixed; }
     .header .header__burger.active span {
       transform: scale(0); }
     .header .header__burger.active:before {
@@ -523,7 +528,7 @@ template {
       transition: all 0.2s ease 0s; }
     .header .menu.active {
       right: 0;
-      z-index: 9; }
+      z-index: 10; }
     .header .menu__list {
       flex-direction: column;
       padding: 100px 0 138px 0; }
@@ -542,7 +547,7 @@ template {
       position: absolute;
       top: 20px;
       right: 25px;
-      z-index: 9; }
+      z-index: 10; }
     .header .menu__list li {
       background: #f6f6f6;
       padding: 17px 16px;
@@ -578,10 +583,15 @@ template {
       margin-bottom: 30px; }
     .header .form__field {
       padding: 12px 21px; } }
+  @media only screen and (max-width: 1023px), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .header .header__wrapper::before {
+      content: " ";
+      background: url(../img/bike@2x.jpg) center no-repeat #1f1f1f;
+      background-size: cover; } }
   @media only screen and (max-width: 767px) {
     .header .header__wrapper::before {
       content: " ";
-      background: url(../img/bike.jpg) center no-repeat #1f1f1f;
+      background: url(../img/bike@1x.jpg) center no-repeat #1f1f1f;
       background-size: cover;
       position: absolute;
       top: 0;
@@ -607,6 +617,11 @@ template {
       margin-top: 0; }
     .header .form__field {
       padding: 13px 19px 11px 26px; } }
+  @media only screen and (max-width: 767px), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .header .header__wrapper::before {
+      content: " ";
+      background: url(../img/bike@2x.jpg) center no-repeat #1f1f1f;
+      background-size: cover; } }
 
 .about .about__body {
   display: flex;
@@ -731,7 +746,7 @@ template {
     display: flex;
     border-radius: 10px;
     position: relative;
-    z-index: 3; }
+    z-index: 2; }
   .bicycles .bicycles__photo img {
     max-width: 100%;
     height: auto; }
@@ -884,25 +899,26 @@ template {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    align-items: center;
-    padding-left: 27px; }
+    align-items: center; }
   .footer .footer__contacts a {
     font-size: 16px;
     line-height: 22px;
     color: rgba(0, 0, 0, 0.5);
     text-decoration: none; }
   .footer .footer__email {
-    margin-right: 127px;
-    position: relative; }
+    margin-right: 90px;
+    position: relative;
+    padding-left: 41px; }
   .footer .footer__email::before {
     content: url(../img/vector.svg);
     display: block;
     width: 26px;
     height: 20px;
     position: absolute;
-    left: -41px; }
+    left: 0; }
   .footer .footer__tel {
-    position: relative; }
+    position: relative;
+    padding-left: 33px; }
   .footer .footer__tel::before {
     content: url(../img/icon.svg);
     display: inline-block;
@@ -910,7 +926,7 @@ template {
     height: 18.68px;
     transform: matrix(0.97, 0.26, -0.25, 0.97, 0, 0);
     position: absolute;
-    left: -33px; }
+    left: 0; }
   @media only screen and (max-width: 1023px) {
     .footer .footer__body {
       padding: 70px 35px; }
@@ -987,3 +1003,7 @@ body {
     color: #1f1f1f;
     text-align: center;
     margin: 0; }
+
+body.lock {
+  position: fixed;
+  overflow: hidden; }
