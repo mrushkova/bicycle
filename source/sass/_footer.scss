@@ -41,7 +41,6 @@
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    padding-left: 27px;
   }
   .footer__contacts a {
     font-size: 16px;
@@ -51,8 +50,9 @@
   }
 
   .footer__email {
-    margin-right: 127px;
+    margin-right: 90px;
     position: relative;
+    padding-left: 41px;
   }
 
   .footer__email::before {
@@ -61,11 +61,12 @@
     width: 26px;
     height: 20px;
     position: absolute;
-    left: -41px;
+    left: 0;
   }
 
   .footer__tel {
     position: relative;
+    padding-left: 33px;
   }
   .footer__tel::before {
     content: url(../img/icon.svg);
@@ -74,7 +75,7 @@
     height: 18.68px;
     transform: matrix(0.97, 0.26, -0.25, 0.97, 0, 0);
     position: absolute;
-    left: -33px;
+    left: 0;
   }
 
   @media only screen and (max-width: 1023px) {
