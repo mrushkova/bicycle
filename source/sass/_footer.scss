@@ -12,6 +12,7 @@
 
   .footer__body h2 {
     margin-bottom: 30px;
+    padding-right: 10px;
   }
 
   address {
@@ -20,7 +21,7 @@
     font-style: normal;
     color: rgba(0, 0, 0, 0.7);
     text-align: center;
-    padding: 0 193px;
+    padding: 0 193px 0 178px;
     margin-bottom: 10px;
     max-width: 555px;
   }
@@ -41,6 +42,7 @@
     justify-content: center;
     flex-direction: row;
     align-items: center;
+    padding-right: 10px;
   }
   .footer__contacts a {
     font-size: 16px;
@@ -86,24 +88,30 @@
     .footer__body h2 {
       font-size: 24px;
       margin-bottom: 20px;
+      padding-right: 0;
     }
 
     address {
       padding: 0;
       margin-bottom: 20px;
+      max-width: 630px;
     }
 
     .footer__map {
-      margin-bottom: 20px;
+      margin-bottom: 19px;
     }
 
     .footer__map iframe {
       width: 698px;
       height: 545px;
+      margin: 0 35px 0;
     }
 
     .footer__contacts {
       padding-bottom: 0;
+    }
+    .footer__email {
+      padding-left: 42px;
     }
   }
 
@@ -130,6 +138,7 @@
     .footer__map iframe {
       width: 320px;
       height: 250px;
+      margin: 0;
     }
 
     .footer__contacts {

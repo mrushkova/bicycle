@@ -555,6 +555,8 @@ template {
     .header .shop {
       flex-direction: column;
       padding-top: 135px; }
+    .header .shop__logo {
+      margin-bottom: 0; }
     .header .shop__info {
       width: 100%;
       flex: 0;
@@ -580,7 +582,8 @@ template {
       font-size: 18px;
       line-height: 28px;
       color: #000000;
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      margin-top: 10px; }
     .header .form__field {
       padding: 12px 21px; } }
   @media only screen and (max-width: 1023px), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -813,7 +816,7 @@ template {
   @media only screen and (max-width: 1023px) {
     .bicycles .bicycles__body {
       display: flex;
-      padding: 50px 89px 70px; }
+      padding: 50px 89px 25px; }
     .bicycles .bicycles__body h2 {
       font-size: 24px;
       line-height: 41px;
@@ -824,7 +827,7 @@ template {
       justify-content: center;
       padding-top: 30px; }
     .bicycles .bicycles__type {
-      margin-bottom: 28px; }
+      margin-bottom: 45px; }
     .bicycles .bicycles__type:nth-child(2) {
       margin-right: 0; }
     .bicycles .bicycles__photo img {
@@ -854,7 +857,7 @@ template {
   @media only screen and (max-width: 767px) {
     .bicycles .bicycles__body {
       display: flex;
-      padding: 50px 25px 70px;
+      padding: 50px 25px 10px;
       align-items: center; }
     .bicycles .bicycles__types {
       display: flex;
@@ -863,7 +866,7 @@ template {
       padding-top: 30px; }
     .bicycles .bicycles__type {
       margin-right: 0;
-      margin-bottom: 18px; }
+      margin-bottom: 40px; }
     .bicycles .bicycles__photo--road::before {
       left: -8.88%; }
     .bicycles .bicycles__photo--child::before {
@@ -907,8 +910,8 @@ template {
     margin-bottom: 56px;
     padding-left: 15px; }
   .video .video__block {
-    width: 100%;
-    height: 100%;
+    width: 929px;
+    height: 522px;
     position: relative; }
     .video .video__block::before {
       content: "";
@@ -922,6 +925,98 @@ template {
       background-image: url(../img/play.svg);
       background-size: contain;
       background-repeat: no-repeat; }
+  @media only screen and (max-width: 1023px) {
+    .video .video__wrapper {
+      width: 100%;
+      min-height: 498px;
+      position: relative; }
+      .video .video__wrapper::before {
+        content: "";
+        background-color: #131314;
+        width: 100%;
+        height: 413px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1; }
+    .video .video__body {
+      max-width: 503px;
+      padding-top: 70px;
+      padding-left: 17.31%;
+      padding-right: 17.31%; }
+    .video .video__body h2 {
+      padding-right: 0;
+      font-size: 24px; }
+    .video .video__body p {
+      max-width: 429px;
+      margin-bottom: 40px;
+      text-align: center;
+      padding-left: 0; }
+    .video .video__block img {
+      width: 503px;
+      height: 282px;
+      object-fit: cover; }
+    .video .video__block {
+      width: 503px;
+      height: 282px;
+      position: relative; }
+      .video .video__block::before {
+        content: "";
+        display: block;
+        width: 17.96%;
+        height: 32.04%;
+        position: absolute;
+        top: 34.04%;
+        left: 40.95%;
+        z-index: 1;
+        background-image: url(../img/play.svg);
+        background-size: contain;
+        background-repeat: no-repeat; } }
+  @media only screen and (max-width: 767px) {
+    .video .video__wrapper {
+      width: 100%;
+      min-height: 433px;
+      position: relative; }
+      .video .video__wrapper::before {
+        content: "";
+        background-color: #131314;
+        width: 100%;
+        height: 384px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1; }
+    .video .video__body {
+      max-width: 290px;
+      padding-top: 84px;
+      padding-left: 14px;
+      padding-right: 16px; }
+    .video .video__body h2 {
+      padding-right: 8px;
+      font-size: 24px; }
+    .video .video__body p {
+      max-width: 290px;
+      margin-bottom: 53px; }
+    .video .video__block img {
+      width: 288px;
+      height: 162px;
+      object-fit: cover; }
+    .video .video__block {
+      width: 288px;
+      height: 162px;
+      position: relative; }
+      .video .video__block::before {
+        content: "";
+        display: block;
+        width: 22.56%;
+        height: 40.2%;
+        position: absolute;
+        top: 29.69%;
+        left: 38.88%;
+        z-index: 1;
+        background-image: url(../img/play.svg);
+        background-size: contain;
+        background-repeat: no-repeat; } }
 
 .footer {
   display: flex;
@@ -933,14 +1028,15 @@ template {
     align-items: center;
     padding: 150px 0 98px 0; }
   .footer .footer__body h2 {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    padding-right: 10px; }
   .footer address {
     font-size: 17px;
     line-height: 31px;
     font-style: normal;
     color: rgba(0, 0, 0, 0.7);
     text-align: center;
-    padding: 0 193px;
+    padding: 0 193px 0 178px;
     margin-bottom: 10px;
     max-width: 555px; }
   .footer .footer__map {
@@ -954,7 +1050,8 @@ template {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    align-items: center; }
+    align-items: center;
+    padding-right: 10px; }
   .footer .footer__contacts a {
     font-size: 16px;
     line-height: 22px;
@@ -987,17 +1084,22 @@ template {
       padding: 70px 35px; }
     .footer .footer__body h2 {
       font-size: 24px;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      padding-right: 0; }
     .footer address {
       padding: 0;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      max-width: 630px; }
     .footer .footer__map {
-      margin-bottom: 20px; }
+      margin-bottom: 19px; }
     .footer .footer__map iframe {
       width: 698px;
-      height: 545px; }
+      height: 545px;
+      margin: 0 35px 0; }
     .footer .footer__contacts {
-      padding-bottom: 0; } }
+      padding-bottom: 0; }
+    .footer .footer__email {
+      padding-left: 42px; } }
   @media only screen and (max-width: 767px) {
     .footer .footer__body {
       padding: 70px 0; }
@@ -1012,7 +1114,8 @@ template {
       margin-bottom: 30px; }
     .footer .footer__map iframe {
       width: 320px;
-      height: 250px; }
+      height: 250px;
+      margin: 0; }
     .footer .footer__contacts {
       flex-direction: column; }
     .footer .footer__email {

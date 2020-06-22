@@ -114,7 +114,7 @@
   @media only screen and (max-width: 1023px) {
     .bicycles__body {
       display: flex;
-      padding: 50px 89px 70px;
+      padding: 50px 89px 25px;
     }
 
     .bicycles__body h2 {
@@ -130,7 +130,7 @@
     }
 
     .bicycles__type {
-      margin-bottom: 28px;
+      margin-bottom: 45px;
     }
     .bicycles__type:nth-child(2) {
       margin-right: 0;
@@ -177,7 +177,7 @@
   @media only screen and (max-width: 767px) {
     .bicycles__body {
       display: flex;
-      padding: 50px 25px 70px;
+      padding: 50px 25px 10px;
       align-items: center;
     }
     .bicycles__types {
@@ -188,7 +188,7 @@
     }
     .bicycles__type {
       margin-right: 0;
-      margin-bottom: 18px;
+      margin-bottom: 40px;
     }
 
     .bicycles__photo--road::before {
