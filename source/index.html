@@ -15,7 +15,11 @@
   <body>
     <header class="header">
       <div class="header__wrapper">
-        <button class="header__burger" type="button" aria-label="mobile menu">
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Кнопка мобильного меню"
+        >
           <span></span>
         </button>
         <div class="header__body">
@@ -37,16 +41,15 @@
           </nav>
           <div class="shop">
             <div class="shop__info">
-              <div class="shop__logo logo">
-                <img src="img/logo.svg" alt="logo" />
+              <div class="shop__logo">
+                <svg class="logo" width="68" height="21">
+                  <use xlink:href="img/sprite.svg#logo"></use>
+                </svg>
               </div>
-              <div class="shop__title"><h1>Мы продаем велосипеды</h1></div>
-              <div class="shop__text">
-                <p>
-                  Наш магазин отбирает только самые лучшие велосипеды для
-                  продажи
-                </p>
-              </div>
+              <h1>Мы продаем велосипеды</h1>
+              <p>
+                Наш магазин отбирает только самые лучшие велосипеды для продажи
+              </p>
             </div>
             <form class="form">
               <p class="form__name">
@@ -78,7 +81,7 @@
 
     <section class="about" id="about">
       <div class="about__body">
-        <div class="about__title"><h2>Несколько фактов о нас</h2></div>
+        <h2>Несколько фактов о нас</h2>
         <div class="about__facts">
           <ol>
             <li class="about__fact"><p>Самый широкий выбор велосипедов!</p></li>
@@ -96,7 +99,7 @@
 
     <section class="bicycles" id="bicycles">
       <div class="bicycles__body">
-        <div class="bicycles__title"><h2>Виды велосипедов</h2></div>
+        <h2>Виды велосипедов</h2>
         <div class="bicycles__types">
           <div class="bicycles__type">
             <div class="bicycles__photo bicycles__photo--road">
@@ -107,7 +110,7 @@
                 alt="Дорожный велосипед"
               />
             </div>
-            <div class="bicycles__name"><p>Дорожный велосипед</p></div>
+            <p>Дорожный велосипед</p>
           </div>
           <div class="bicycles__type">
             <div class="bicycles__photo bicycles__photo--mountain">
@@ -118,7 +121,7 @@
                 alt="Горный велосипед"
               />
             </div>
-            <div class="bicycles__name"><p>Горный велосипед</p></div>
+            <p>Горный велосипед</p>
           </div>
           <div class="bicycles__type">
             <div class="bicycles__photo bicycles__photo--child">
@@ -129,7 +132,7 @@
                 alt="Детский велосипед"
               />
             </div>
-            <div class="bicycles__name"><p>Детский велосипед</p></div>
+            <p>Детский велосипед</p>
           </div>
         </div>
       </div>
@@ -137,13 +140,10 @@
 
     <footer class="footer" id="footer">
       <div class="footer__body">
-        <div class="footer__title"><h2>Как нас найти?</h2></div>
-        <div class="footer__address">
-          <address>
-            Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д.
-            19
-          </address>
-        </div>
+        <h2>Как нас найти?</h2>
+        <address>
+          Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19
+        </address>
         <div class="footer__map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6034.939745534854!2d30.315324163573695!3d59.93986611512627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0KDQvtGB0YHQuNGPLCAxOTExODY!5e0!3m2!1sru!2spl!4v1591802961540!5m2!1sru!2spl"
@@ -154,14 +154,12 @@
           ></iframe>
         </div>
         <div class="footer__contacts">
-          <div class="footer__email">
-            <a href="mailto:puteshestviemechta@gmail.ru"
-              >puteshestviemechta@gmail.ru</a
-            >
-          </div>
-          <div class="footer__tel">
-            <a href="tel:+749978468446">+7 (499) -784-684-46</a>
-          </div>
+          <a href="mailto:puteshestviemechta@gmail.ru" class="footer__email"
+            >puteshestviemechta@gmail.ru</a
+          >
+          <a href="tel:+749978468446" class="footer__tel"
+            >+7 (499) -784-684-46</a
+          >
         </div>
       </div>
     </footer>

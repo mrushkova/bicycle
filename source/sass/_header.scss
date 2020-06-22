@@ -1,3 +1,18 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
 .header {
   width: 100%;
 
@@ -26,7 +41,7 @@
   .menu {
     width: 100%;
     position: relative;
-    margin-bottom: 252px;
+    margin-bottom: 256px;
     &::after {
       content: " ";
       position: absolute;
@@ -81,20 +96,19 @@
   .shop__logo {
     margin-bottom: 30px;
   }
-  .shop__title {
-    min-height: 128px;
-    margin-bottom: 10px;
-  }
-  .shop__title h1 {
+
+  .shop__info h1 {
     font-weight: bold;
     font-size: 46px;
     line-height: 64px;
     letter-spacing: -0.005em;
     color: #ffffff;
     margin: 0;
+    min-height: 128px;
+    margin-bottom: 4px;
   }
 
-  .shop__text {
+  .shop__info p {
     font-weight: 300;
     font-size: 20px;
     line-height: 32px;
@@ -117,7 +131,7 @@
     letter-spacing: -0.005em;
     color: #ffffff;
     mix-blend-mode: normal;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   .form__field {
@@ -319,21 +333,17 @@
       min-height: 128px;
       margin-right: 0;
       margin-bottom: 107px;
-    }
-    .shop__title,
-    .shop__text {
       text-align: center;
     }
-    .shop__title {
+
+    .shop__info h1 {
+      font-size: 30px;
+      line-height: 42px;
       min-height: 42px;
       margin-bottom: 20px;
     }
-    .shop__title h1 {
-      font-size: 30px;
-      line-height: 42px;
-    }
 
-    .shop__text p {
+    .shop__info p {
       height: 96px;
       font-size: 18px;
       line-height: 32px;
@@ -385,7 +395,7 @@
       margin-bottom: 140px;
     }
 
-    .shop__text p {
+    .shop__info p {
       margin: 0;
     }
 

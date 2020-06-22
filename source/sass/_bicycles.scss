@@ -11,7 +11,7 @@
     padding: 150px 145px 150px 169px;
   }
 
-  .bicycles__title {
+  .bicycles__body h2 {
     padding-right: 30px;
     padding-top: 5px;
   }
@@ -101,7 +101,7 @@
     background-repeat: no-repeat;
   }
 
-  .bicycles__name {
+  .bicycles__type p {
     font-weight: 600;
     font-size: 22px;
     line-height: 34px;
@@ -116,12 +116,10 @@
       padding: 50px 89px 70px;
     }
 
-    .bicycles__title {
-      padding: 0;
-    }
-    .bicycles__title h2 {
+    .bicycles__body h2 {
       font-size: 24px;
       line-height: 41px;
+      padding: 0;
     }
     .bicycles__types {
       display: flex;
