@@ -453,7 +453,7 @@ template {
   @media only screen and (max-width: 1023px) {
     .header .header__wrapper {
       width: 100%;
-      min-height: 754px;
+      min-height: 684px;
       background: none;
       position: relative; }
       .header .header__wrapper::before {
@@ -462,6 +462,21 @@ template {
         background-size: cover;
         position: absolute;
         top: 0;
+        left: 0;
+        width: 100%;
+        height: 340px;
+        z-index: 1; }
+    .header .header__wrapper--nojs {
+      width: 100%;
+      min-height: 754px;
+      background: none;
+      position: relative; }
+      .header .header__wrapper--nojs::before {
+        content: " ";
+        background: url(../img/bike@1x.jpg) center no-repeat #1f1f1f;
+        background-size: cover;
+        position: absolute;
+        top: 460px;
         left: 0;
         width: 100%;
         height: 340px;
@@ -520,6 +535,8 @@ template {
       transform: rotate(-45deg);
       top: 18.5px;
       background-color: #48494d; }
+    .header .header__burger--nojs {
+      display: none; }
     .header .menu {
       height: 100vh;
       margin-bottom: 0;
@@ -529,6 +546,14 @@ template {
       width: 100%;
       background-color: #ffffff;
       transition: all 0.2s ease 0s; }
+    .header .menu--nojs {
+      height: 450px;
+      margin-bottom: 0;
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 100%;
+      background-color: #ffffff; }
     .header .menu.active {
       right: 0;
       z-index: 10; }
@@ -605,6 +630,21 @@ template {
       width: 100%;
       height: 390px;
       z-index: 1; }
+    .header .header__wrapper--nojs {
+      width: 100%;
+      min-height: 684px;
+      background: none;
+      position: relative; }
+      .header .header__wrapper--nojs::before {
+        content: " ";
+        background: url(../img/bike@1x.jpg) center no-repeat #1f1f1f;
+        background-size: cover;
+        position: absolute;
+        top: 460px;
+        left: 0;
+        width: 100%;
+        height: 390px;
+        z-index: 1; }
     .header .header__body {
       padding: 0 16px; }
     .header .logo {
@@ -693,7 +733,7 @@ template {
 
 @media only screen and (max-width: 1023px) {
   .about .about__body {
-    padding: 0 106px 30px 106px; }
+    padding: 70px 106px 30px 106px; }
   .about .about__facts ol {
     flex-flow: row wrap; }
   .about .about__body h2 {

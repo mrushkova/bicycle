@@ -201,7 +201,7 @@
   @media only screen and (max-width: 1023px) {
     .header__wrapper {
       width: 100%;
-      min-height: 754px;
+      min-height: 684px;
       background: none;
       position: relative;
       &::before {
@@ -210,6 +210,24 @@
         background-size: cover;
         position: absolute;
         top: 0;
+        left: 0;
+        width: 100%;
+        height: 340px;
+        z-index: 1;
+      }
+    }
+
+    .header__wrapper--nojs {
+      width: 100%;
+      min-height: 754px;
+      background: none;
+      position: relative;
+      &::before {
+        content: " ";
+        background: url(../img/bike@1x.jpg) center no-repeat #1f1f1f;
+        background-size: cover;
+        position: absolute;
+        top: 460px;
         left: 0;
         width: 100%;
         height: 340px;
@@ -286,6 +304,11 @@
       top: 18.5px;
       background-color: #48494d;
     }
+
+    .header__burger--nojs {
+      display: none;
+    }
+
     .menu {
       height: 100vh;
       margin-bottom: 0;
@@ -295,6 +318,16 @@
       width: 100%;
       background-color: #ffffff;
       transition: all 0.2s ease 0s;
+    }
+
+    .menu--nojs {
+      height: 450px;
+      margin-bottom: 0;
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 100%;
+      background-color: #ffffff;
     }
 
     .menu.active {
@@ -404,6 +437,24 @@
       width: 100%;
       height: 390px;
       z-index: 1;
+    }
+
+    .header__wrapper--nojs {
+      width: 100%;
+      min-height: 684px;
+      background: none;
+      position: relative;
+      &::before {
+        content: " ";
+        background: url(../img/bike@1x.jpg) center no-repeat #1f1f1f;
+        background-size: cover;
+        position: absolute;
+        top: 460px;
+        left: 0;
+        width: 100%;
+        height: 390px;
+        z-index: 1;
+      }
     }
 
     .header__body {

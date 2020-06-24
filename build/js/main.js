@@ -3,6 +3,11 @@
 var burger = document.querySelector('.header__burger');
 var body = document.querySelector('body');
 var menu = document.querySelector('.menu');
+var wrapper = document.querySelector('.header__wrapper');
+
+menu.classList.remove('menu--nojs');
+burger.classList.remove('header__burger--nojs');
+wrapper.classList.remove('header__wrapper--nojs');
 
 burger.addEventListener('click', function () {
   burger.classList.toggle('active');
