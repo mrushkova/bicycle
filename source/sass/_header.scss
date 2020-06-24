@@ -38,6 +38,11 @@
     cursor: pointer;
   }
 
+  .header__burger:active,
+  .header__burger:focus {
+    outline: none;
+  }
+
   .menu {
     width: 100%;
     position: relative;

@@ -321,6 +321,9 @@ template {
   .header .header__burger {
     display: none;
     cursor: pointer; }
+  .header .header__burger:active,
+  .header .header__burger:focus {
+    outline: none; }
   .header .menu {
     width: 100%;
     position: relative;
@@ -924,7 +927,8 @@ template {
       z-index: 1;
       background-image: url(../img/play.svg);
       background-size: contain;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      cursor: pointer; }
   @media only screen and (max-width: 1023px) {
     .video .video__wrapper {
       width: 100%;
