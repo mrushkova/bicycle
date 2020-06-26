@@ -84,22 +84,79 @@
         <div class="bicycles__types">
           <div class="bicycles__type">
             <div class="bicycles__photo bicycles__photo--road">
-              <!-- 1x: 342px; 2x: 684px -->
-              <img src="img/roadbike@1x.jpg" width="342" height="503" srcset="img/roadbike@1x.jpg 1x, img/roadbike@2x.jpg 2x" alt="Дорожный велосипед">
+              <picture>
+                <!-- 1x: 270px; 2x: 540px -->
+                <source type="image/webp" media="(max-width: 1023px)" srcset="
+                    img/roadbike-tablet@1x.webp 1x,
+                    img/roadbike-tablet@2x.webp 2x
+                  ">
+
+                <!-- 1x: 342px; 2x: 684px -->
+                <source type="image/webp" srcset="img/roadbike@1x.webp 1x, img/roadbike@2x.webp 2x">
+
+                <!-- 1x: 270px; 2x: 540px -->
+                <source media="(max-width: 1023px)" srcset="
+                    img/roadbike-tablet@1x.jpg 1x,
+                    img/roadbike-tablet@2x.jpg 2x
+                  ">
+
+                <!-- 1x: 342px; 2x: 684px -->
+                <img src="img/roadbike@1x.jpg" width="342" height="503" srcset="img/roadbike@1x.jpg 1x, img/roadbike@2x.jpg 2x" alt="Дорожный велосипед">
+              </picture>
             </div>
             <p>Дорожный велосипед</p>
           </div>
           <div class="bicycles__type">
             <div class="bicycles__photo bicycles__photo--mountain">
-              <!-- 1x: 342px; 2x: 684px -->
-              <img src="img/mountainbike@1x.jpg" width="342" height="566" srcset="img/mountainbike@1x.jpg 1x, img/mountainbike@2x.jpg 2x" alt="Горный велосипед">
+              <picture>
+                <!-- 1x: 270px; 2x: 540px -->
+                <source type="image/webp" media="(max-width: 1023px)" srcset="
+                    img/mountainbike-tablet@1x.webp 1x,
+                    img/mountainbike-tablet@2x.webp 2x
+                  ">
+
+                <!-- 1x: 342px; 2x: 684px -->
+                <source type="image/webp" srcset="
+                    img/mountainbike@1x.webp 1x,
+                    img/mountainbike@2x.webp 2x
+                  ">
+
+                <!-- 1x: 270px; 2x: 540px -->
+                <source media="(max-width: 1023px)" srcset="
+                    img/mountainbike-tablet@1x.jpg 1x,
+                    img/mountainbike-tablet@2x.jpg 2x
+                  ">
+
+                <!-- 1x: 342px; 2x: 684px -->
+                <img src="img/mountainbike@1x.jpg" width="342" height="566" srcset="
+                    img/mountainbike@1x.jpg 1x,
+                    img/mountainbike@2x.jpg 2x
+                  " alt="Горный велосипед">
+              </picture>
             </div>
             <p>Горный велосипед</p>
           </div>
           <div class="bicycles__type">
             <div class="bicycles__photo bicycles__photo--child">
-              <!-- 1x: 342px; 2x: 684px -->
-              <img src="img/childbike@1x.jpg" width="342" height="512" srcset="img/childbike@1x.jpg 1x, img/childbike@2x.jpg 2x" alt="Детский велосипед">
+              <picture>
+                <!-- 1x: 270px; 2x: 540px -->
+                <source type="image/webp" media="(max-width: 1023px)" srcset="
+                    img/childbike-tablet@1x.webp 1x,
+                    img/childbike-tablet@2x.webp 2x
+                  ">
+
+                <!-- 1x: 342px; 2x: 684px -->
+                <source type="image/webp" srcset="img/childbike@1x.webp 1x, img/childbike@2x.webp 2x">
+
+                <!-- 1x: 270px; 2x: 540px -->
+                <source media="(max-width: 1023px)" srcset="
+                    img/childbike-tablet@1x.jpg 1x,
+                    img/childbike-tablet@2x.jpg 2x
+                  ">
+
+                <!-- 1x: 342px; 2x: 684px -->
+                <img src="img/childbike@1x.jpg" width="342" height="512" srcset="img/childbike@1x.jpg 1x, img/childbike@2x.jpg 2x" alt="Детский велосипед">
+              </picture>
             </div>
             <p>Детский велосипед</p>
           </div>
@@ -116,7 +173,12 @@
             для себя.
           </p>
           <div class="video__block">
-            <img src="img/video@1x.jpg" width="929" height="522" srcset="img/video@1x.jpg 1x, img/video@2x.jpg 2x" alt="Видео про велосипеды">
+            <picture>
+              <!-- 1x: 929x; 2x: 1858px -->
+              <source type="image/webp" srcset="img/video@1x.webp 1x, img/video@2x.webp 2x">
+              <!-- 1x: 929px; 2x: 1858px -->
+              <img src="img/video@1x.jpg" width="929" height="522" srcset="img/video@1x.jpg 1x, img/video@2x.jpg 2x" alt="Видео про велосипеды">
+            </picture>
           </div>
         </div>
       </div>
