@@ -335,10 +335,9 @@ template {
       width: 100%;
       height: 1px;
       background-color: rgba(255, 255, 255, 0.2); }
-  .header .menu__list,
-  .header .shop {
+  .header .menu__list {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-between; }
   .header .menu__list {
     list-style: none;
@@ -357,7 +356,10 @@ template {
   .header .menu__link:hover {
     color: #0ad9c6; }
   .header .shop {
-    width: 100%; }
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between; }
   .header .shop__info {
     display: flex;
     flex-direction: column;
@@ -388,7 +390,7 @@ template {
   .header .form {
     width: 100%;
     max-width: 327px; }
-  .header .form__name {
+  .header .form p {
     font-weight: 600;
     font-size: 17px;
     line-height: 28px;
@@ -397,7 +399,7 @@ template {
     color: #ffffff;
     mix-blend-mode: normal;
     margin-top: 5px; }
-  .header .form__field {
+  .header .form input {
     width: 100%;
     height: 48px;
     font-size: 15px;
@@ -409,25 +411,25 @@ template {
     box-sizing: border-box;
     padding: 14px 30px;
     margin-bottom: 20px; }
-    .header .form__field::-webkit-input-placeholder {
+    .header .form input::-webkit-input-placeholder {
       color: #000000;
       opacity: 0.5; }
-    .header .form__field:-moz-placeholder {
+    .header .form input:-moz-placeholder {
       color: #000000;
       opacity: 0.5; }
-    .header .form__field::-moz-placeholder {
+    .header .form input::-moz-placeholder {
       color: #000000;
       opacity: 0.5; }
-    .header .form__field:-ms-input-placeholder {
+    .header .form input:-ms-input-placeholder {
       color: #000000;
       opacity: 0.5; }
-  .header .form__field:hover {
+  .header .form input:hover {
     border: 3px solid #0ad9c6;
     padding: 14px 28px; }
-  .header .form__field:focus {
+  .header .form input:focus {
     border: 3px solid #0ad9c6;
     padding: 14px 28px; }
-  .header .form__submit {
+  .header .form input[type="submit"] {
     width: 100%;
     height: 51px;
     font-weight: 600;
@@ -441,9 +443,9 @@ template {
     border-radius: 6px;
     cursor: pointer;
     padding: 10px 0; }
-  .header .form__submit:hover {
+  .header .form input[type="submit"]:hover {
     border: 3px solid #ffffff; }
-  .header .form__submit:focus {
+  .header .form input[type="submit"]:focus {
     color: #ffffff;
     border: 3px solid #ffffff; }
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -606,13 +608,13 @@ template {
     .header .form {
       max-width: 321px;
       margin: 0px auto; }
-    .header .form__name {
+    .header .form p {
       font-size: 18px;
       line-height: 28px;
       color: #000000;
       margin-bottom: 30px;
       margin-top: 10px; }
-    .header .form__field {
+    .header .form input {
       padding: 12px 21px; } }
   @media only screen and (max-width: 1023px), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .header .header__wrapper::before {
@@ -656,12 +658,11 @@ template {
       margin-bottom: 140px; }
     .header .shop__info p {
       margin: 0; }
-    .header .form__name {
+    .header .form p {
+      margin-top: 0;
       margin-bottom: 20px;
       padding: 0; }
-    .header .form__name {
-      margin-top: 0; }
-    .header .form__field {
+    .header .form input {
       padding: 13px 19px 11px 26px; } }
   @media only screen and (max-width: 767px), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .header .header__wrapper::before {
