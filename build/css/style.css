@@ -1095,6 +1095,10 @@ template {
     line-height: 22px;
     color: rgba(0, 0, 0, 0.5);
     text-decoration: none; }
+  .footer .footer__contacts a:hover {
+    opacity: 0.8; }
+  .footer .footer__contacts a:active {
+    opacity: 0.5; }
   .footer .footer__email {
     margin-right: 90px;
     position: relative;

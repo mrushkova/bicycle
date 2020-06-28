@@ -51,6 +51,14 @@
     text-decoration: none;
   }
 
+  .footer__contacts a:hover {
+    opacity: 0.8;
+  }
+
+  .footer__contacts a:active {
+    opacity: 0.5;
+  }
+
   .footer__email {
     margin-right: 90px;
     position: relative;
