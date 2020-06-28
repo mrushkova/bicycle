@@ -1135,7 +1135,7 @@ template {
     .footer .footer__map iframe {
       width: 698px;
       height: 545px;
-      margin: 0 35px 0; }
+      margin: 0; }
     .footer .footer__contacts {
       padding-bottom: 0; }
     .footer .footer__email {
