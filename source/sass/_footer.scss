@@ -34,15 +34,13 @@
   .footer__map iframe {
     width: 957px;
     height: 530px;
-    margin: 30px 35px 37px;
+    margin: 30px 35px 35px;
   }
 
   .footer__contacts {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    padding-right: 10px;
+    max-width: 957px;
+    margin-right: 17px;
   }
   .footer__contacts a {
     font-size: 16px;
@@ -83,9 +81,9 @@
     display: inline-block;
     width: 17.47px;
     height: 18.68px;
-    transform: matrix(0.97, 0.26, -0.25, 0.97, 0, 0);
     position: absolute;
     left: 0;
+    top: -2px;
   }
 
   @media only screen and (max-width: 1023px) {
