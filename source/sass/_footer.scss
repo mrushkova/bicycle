@@ -115,9 +115,11 @@
 
     .footer__contacts {
       padding-bottom: 0;
+      margin-right: 73px;
+      margin-left: 62px;
     }
     .footer__email {
-      padding-left: 42px;
+      margin-right: 93px;
     }
   }
 
@@ -149,12 +151,18 @@
 
     .footer__contacts {
       flex-direction: column;
+      margin: 0;
+      align-items: center;
     }
     .footer__email {
-      margin-left: 26px;
-      margin-right: 0;
+      margin-right: -7px;
       margin-bottom: 22px;
-      align-content: center;
+    }
+    .footer__tel {
+      padding-left: 27px;
+    }
+    .footer__tel::before {
+      left: -7px;
     }
   }
 }
