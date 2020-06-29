@@ -59,5 +59,6 @@ body.lock {
 }
 
 .visually-hidden {
-  display: none;
+  position: absolute;
+  z-index: -10;
 }

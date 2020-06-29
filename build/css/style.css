@@ -389,7 +389,8 @@ template {
     padding: 0; }
   .header .form {
     width: 100%;
-    max-width: 327px; }
+    max-width: 327px;
+    position: relative; }
   .header .form p {
     font-weight: 600;
     font-size: 17px;
@@ -1222,4 +1223,5 @@ body.lock {
   overflow: hidden; }
 
 .visually-hidden {
-  display: none; }
+  position: absolute;
+  z-index: -10; }
