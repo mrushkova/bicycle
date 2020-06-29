@@ -1220,3 +1220,6 @@ body {
 body.lock {
   position: fixed;
   overflow: hidden; }
+
+.visually-hidden {
+  display: none; }
