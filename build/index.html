@@ -53,10 +53,10 @@
                 Заполните поля ниже и мы подберем велосипед Вашей мечты
               </p>
               <label class="visually-hidden" for="name">Введите Ваше имя</label>
-              <input id="name" type="text" name="name" placeholder="Введите Ваше Имя">
+              <input id="name" type="text" name="name" required="" placeholder="Введите Ваше Имя">
 
               <label class="visually-hidden" for="phone">Введите Ваш номер телефона</label>
-              <input id="phone" type="tel" name="phone" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" placeholder="Введите Ваш номер телефона">
+              <input id="phone" type="tel" name="phone" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" required="" placeholder="Введите Ваш номер телефона">
 
               <input class="form__submit" type="submit" value="Подобрать велосипед мечты">
             </form>
