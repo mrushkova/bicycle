@@ -1,219 +1,219 @@
 .bicycles {
   width: 100%;
   background-color: #f6f7f9;
+}
 
+.bicycles__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1126px;
+  margin: 0 auto;
+  padding: 150px 145px 145px 169px;
+}
+
+.bicycles__body h2 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: -0.005em;
+  color: #1f1f1f;
+  text-align: center;
+  margin: 0;
+  padding-right: 30px;
+  padding-top: 5px;
+}
+.bicycles__types {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+.bicycles__type {
+  margin-right: 50px;
+}
+
+.bicycles__type:last-child {
+  margin-right: 0;
+}
+
+.bicycles__photo {
+  display: flex;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.bicycles__photo img {
+  max-width: 100%;
+  height: auto;
+}
+.bicycles__photo--road {
+  padding-top: 10px;
+}
+.bicycles__photo--road::before {
+  content: "";
+  display: block;
+  width: 52.63%;
+  height: 35.78%;
+  position: absolute;
+  top: 31%;
+  left: -17.54%;
+  z-index: -1;
+  background-image: url(../img/ellipse1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.bicycles__photo--mountain {
+  margin-top: 39px;
+}
+.bicycles__photo--mountain::before {
+  content: "";
+  display: block;
+  width: 13.74%;
+  height: 8.3%;
+  position: absolute;
+  top: -3.18%;
+  left: -5.5%;
+  z-index: 1;
+  background-image: url(../img/rectangle1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bicycles__photo--mountain::after {
+  content: "";
+  display: block;
+  width: 13.74%;
+  height: 8.3%;
+  position: absolute;
+  bottom: -4.06%;
+  right: -6.72%;
+  z-index: 1;
+  background-image: url(../img/rectangle2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bicycles__photo--child::before {
+  content: "";
+  display: block;
+  width: 27.77%;
+  height: 18.53%;
+  position: absolute;
+  top: -6.24%;
+  right: -10.52%;
+  z-index: 1;
+  background-image: url(../img/ellipse2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bicycles__type p {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 34px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1023px) {
   .bicycles__body {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 1126px;
-    margin: 0 auto;
-    padding: 150px 145px 145px 169px;
+    padding: 50px 89px 20px;
   }
 
   .bicycles__body h2 {
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 30px;
-    letter-spacing: -0.005em;
-    color: #1f1f1f;
-    text-align: center;
-    margin: 0;
-    padding-right: 30px;
-    padding-top: 5px;
+    font-size: 24px;
+    line-height: 41px;
+    padding: 0;
   }
   .bicycles__types {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 50px;
-  }
-  .bicycles__type {
-    margin-right: 50px;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 30px;
   }
 
-  .bicycles__type:last-child {
+  .bicycles__type {
+    margin-bottom: 50px;
+  }
+  .bicycles__type:nth-child(2) {
     margin-right: 0;
   }
-
   .bicycles__photo {
-    display: flex;
+    margin-bottom: 17px;
+  }
+  .bicycles__photo img {
+    width: 270px;
+    height: 300px;
+    overflow: hidden;
+    object-fit: cover;
     border-radius: 10px;
-    position: relative;
-    z-index: 2;
   }
 
-  .bicycles__photo img {
-    max-width: 100%;
-    height: auto;
-  }
   .bicycles__photo--road {
-    padding-top: 10px;
+    padding-top: 0;
   }
+
   .bicycles__photo--road::before {
-    content: "";
-    display: block;
-    width: 52.63%;
-    height: 35.78%;
-    position: absolute;
-    top: 31%;
-    left: -17.54%;
-    z-index: -1;
-    background-image: url(../img/ellipse1.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 47.03%;
+    height: 42.33%;
+    top: 67%;
+    left: -13.7%;
   }
+
   .bicycles__photo--mountain {
-    margin-top: 39px;
+    margin-top: 0;
   }
   .bicycles__photo--mountain::before {
-    content: "";
-    display: block;
-    width: 13.74%;
-    height: 8.3%;
-    position: absolute;
-    top: -3.18%;
-    left: -5.5%;
-    z-index: 1;
-    background-image: url(../img/rectangle1.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+    display: none;
   }
 
   .bicycles__photo--mountain::after {
-    content: "";
-    display: block;
-    width: 13.74%;
-    height: 8.3%;
-    position: absolute;
-    bottom: -4.06%;
-    right: -6.72%;
-    z-index: 1;
-    background-image: url(../img/rectangle2.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+    display: none;
   }
 
   .bicycles__photo--child::before {
-    content: "";
-    display: block;
-    width: 27.77%;
-    height: 18.53%;
-    position: absolute;
+    width: 25.18%;
+    height: 22.66%;
     top: -6.24%;
     right: -10.52%;
-    z-index: 1;
-    background-image: url(../img/ellipse2.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
   }
 
   .bicycles__type p {
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 34px;
-    text-align: center;
-    letter-spacing: -0.5px;
-    color: #000000;
-    margin-bottom: 0;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .bicycles__body {
+    display: flex;
+    padding: 50px 25px 10px;
+    align-items: center;
+  }
+  .bicycles__types {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .bicycles__type {
+    margin-right: 0;
+    margin-bottom: 45px;
   }
 
-  @media only screen and (max-width: 1023px) {
-    .bicycles__body {
-      display: flex;
-      padding: 50px 89px 20px;
-    }
-
-    .bicycles__body h2 {
-      font-size: 24px;
-      line-height: 41px;
-      padding: 0;
-    }
-    .bicycles__types {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      padding-top: 30px;
-    }
-
-    .bicycles__type {
-      margin-bottom: 50px;
-    }
-    .bicycles__type:nth-child(2) {
-      margin-right: 0;
-    }
-    .bicycles__photo {
-      margin-bottom: 17px;
-    }
-    .bicycles__photo img {
-      width: 270px;
-      height: 300px;
-      overflow: hidden;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .bicycles__photo--road {
-      padding-top: 0;
-    }
-
-    .bicycles__photo--road::before {
-      width: 47.03%;
-      height: 42.33%;
-      top: 67%;
-      left: -13.7%;
-    }
-
-    .bicycles__photo--mountain {
-      margin-top: 0;
-    }
-    .bicycles__photo--mountain::before {
-      display: none;
-    }
-
-    .bicycles__photo--mountain::after {
-      display: none;
-    }
-
-    .bicycles__photo--child::before {
-      width: 25.18%;
-      height: 22.66%;
-      top: -6.24%;
-      right: -10.52%;
-    }
-
-    .bicycles__type p {
-      margin: 0;
-    }
+  .bicycles__type:nth-child(2) {
+    margin-bottom: 40px;
   }
 
-  @media only screen and (max-width: 767px) {
-    .bicycles__body {
-      display: flex;
-      padding: 50px 25px 10px;
-      align-items: center;
-    }
-    .bicycles__types {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      padding-top: 30px;
-    }
-    .bicycles__type {
-      margin-right: 0;
-      margin-bottom: 45px;
-    }
+  .bicycles__photo--road::before {
+    left: -8.88%;
+  }
 
-    .bicycles__type:nth-child(2) {
-      margin-bottom: 40px;
-    }
-
-    .bicycles__photo--road::before {
-      left: -8.88%;
-    }
-
-    .bicycles__photo--child::before {
-      right: -5.55%;
-    }
+  .bicycles__photo--child::before {
+    right: -5.55%;
   }
 }
