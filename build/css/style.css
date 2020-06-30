@@ -684,7 +684,7 @@ body.lock {
   border: 1px solid #c9ccd4;
   border-radius: 4px;
   box-sizing: border-box;
-  padding: 14px 30px;
+  padding: 0 30px;
   margin-bottom: 20px; }
   .form input::-webkit-input-placeholder {
     color: #000000;
@@ -701,11 +701,11 @@ body.lock {
 
 .form input:hover {
   border: 3px solid #0ad9c6;
-  padding: 14px 28px; }
+  padding: 0 28px; }
 
 .form input:focus {
   border: 3px solid #0ad9c6;
-  padding: 14px 28px; }
+  padding: 0 28px; }
 
 .form input[type="submit"] {
   width: 100%;
@@ -719,8 +719,7 @@ body.lock {
   box-sizing: border-box;
   border: 3px solid #0ad9c6;
   border-radius: 6px;
-  cursor: pointer;
-  padding: 10px 0; }
+  cursor: pointer; }
 
 .form input[type="submit"]:hover {
   border: 3px solid #ffffff; }
@@ -740,7 +739,11 @@ body.lock {
     margin-bottom: 30px;
     margin-top: 10px; }
   .form input {
-    padding: 12px 21px; } }
+    padding: 0 21px; }
+  .form input:hover {
+    padding: 0 19px; }
+  .form input:focus {
+    padding: 0 19px; } }
 
 @media only screen and (max-width: 767px) {
   .form p {
@@ -748,7 +751,11 @@ body.lock {
     margin-bottom: 20px;
     padding: 0; }
   .form input {
-    padding: 13px 19px 11px 26px; } }
+    padding: 0 25px; }
+  .form input:hover {
+    padding: 0 23px; }
+  .form input:focus {
+    padding: 0 23px; } }
 
 .about__body {
   display: flex;

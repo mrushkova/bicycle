@@ -24,7 +24,7 @@
   border: 1px solid #c9ccd4;
   border-radius: 4px;
   box-sizing: border-box;
-  padding: 14px 30px;
+  padding: 0 30px;
   margin-bottom: 20px;
   @include placeholder {
     color: #000000;
@@ -34,12 +34,12 @@
 
 .form input:hover {
   border: 3px solid #0ad9c6;
-  padding: 14px 28px;
+  padding: 0 28px;
 }
 
 .form input:focus {
   border: 3px solid #0ad9c6;
-  padding: 14px 28px;
+  padding: 0 28px;
 }
 
 .form input[type="submit"] {
@@ -55,7 +55,6 @@
   border: 3px solid #0ad9c6;
   border-radius: 6px;
   cursor: pointer;
-  padding: 10px 0;
 }
 
 .form input[type="submit"]:hover {
@@ -81,7 +80,15 @@
     margin-top: 10px;
   }
   .form input {
-    padding: 12px 21px;
+    padding: 0 21px;
+  }
+
+  .form input:hover {
+    padding: 0 19px;
+  }
+
+  .form input:focus {
+    padding: 0 19px;
   }
 }
 
@@ -93,6 +100,14 @@
   }
 
   .form input {
-    padding: 13px 19px 11px 26px;
+    padding: 0 25px;
+  }
+
+  .form input:hover {
+    padding: 0 23px;
+  }
+
+  .form input:focus {
+    padding: 0 23px;
   }
 }
