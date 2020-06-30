@@ -1,17 +1,28 @@
-/*! picturefill - v3.0.2 - 2016-02-12
+/* eslint-disable no-undef */
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-shadow */
+/* eslint-disable no-console */
+/* eslint-disable valid-jsdoc */
+/* eslint-disable no-empty */
+/* eslint-disable no-new-func */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow-restricted-names */
+/* eslint-disable no-undefined */
+/* eslint-disable one-var */
+/* ! picturefill - v3.0.2 - 2016-02-12
  * https://scottjehl.github.io/picturefill/
  * Copyright (c) 2016 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
  */
-/*! Gecko-Picture - v1.0
+/* ! Gecko-Picture - v1.0
  * https://github.com/scottjehl/picturefill/tree/3.0/src/plugins/gecko-picture
  * Firefox's early picture implementation (prior to FF41) is static and does
  * not react to viewport changes. This tiny module fixes this.
  */
 
-"use strict";
+'use strict';
 
 (function (window) {
-  /*jshint eqnull:true */
+  /* jshint eqnull:true */
   var ua = navigator.userAgent;
 
   if (
@@ -21,71 +32,71 @@
     RegExp.$1 < 45
   ) {
     addEventListener(
-      "resize",
-      (function () {
-        var timer;
+        'resize',
+        (function () {
+          var timer;
 
-        var dummySrc = document.createElement("source");
+          var dummySrc = document.createElement('source');
 
-        var fixRespimg = function (img) {
-          var source, sizes;
-          var picture = img.parentNode;
+          var fixRespimg = function (img) {
+            var source, sizes;
+            var picture = img.parentNode;
 
-          if (picture.nodeName.toUpperCase() === "PICTURE") {
-            source = dummySrc.cloneNode();
+            if (picture.nodeName.toUpperCase() === 'PICTURE') {
+              source = dummySrc.cloneNode();
 
-            picture.insertBefore(source, picture.firstElementChild);
-            setTimeout(function () {
-              picture.removeChild(source);
-            });
-          } else if (!img._pfLastSize || img.offsetWidth > img._pfLastSize) {
-            img._pfLastSize = img.offsetWidth;
-            sizes = img.sizes;
-            img.sizes += ",100vw";
-            setTimeout(function () {
-              img.sizes = sizes;
-            });
+              picture.insertBefore(source, picture.firstElementChild);
+              setTimeout(function () {
+                picture.removeChild(source);
+              });
+            } else if (!img._pfLastSize || img.offsetWidth > img._pfLastSize) {
+              img._pfLastSize = img.offsetWidth;
+              sizes = img.sizes;
+              img.sizes += ',100vw';
+              setTimeout(function () {
+                img.sizes = sizes;
+              });
+            }
+          };
+
+          var findPictureImgs = function () {
+            var i;
+            var imgs = document.querySelectorAll(
+                'picture > img, img[srcset][sizes]'
+            );
+            for (i = 0; i < imgs.length; i++) {
+              fixRespimg(imgs[i]);
+            }
+          };
+          var onResize = function () {
+            clearTimeout(timer);
+            timer = setTimeout(findPictureImgs, 99);
+          };
+          var mq = window.matchMedia && matchMedia('(orientation: landscape)');
+          var init = function () {
+            onResize();
+
+            if (mq && mq.addListener) {
+              mq.addListener(onResize);
+            }
+          };
+
+          dummySrc.srcset =
+          'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+
+          if (/^[c|i]|d$/.test(document.readyState || '')) {
+            init();
+          } else {
+            document.addEventListener('DOMContentLoaded', init);
           }
-        };
 
-        var findPictureImgs = function () {
-          var i;
-          var imgs = document.querySelectorAll(
-            "picture > img, img[srcset][sizes]"
-          );
-          for (i = 0; i < imgs.length; i++) {
-            fixRespimg(imgs[i]);
-          }
-        };
-        var onResize = function () {
-          clearTimeout(timer);
-          timer = setTimeout(findPictureImgs, 99);
-        };
-        var mq = window.matchMedia && matchMedia("(orientation: landscape)");
-        var init = function () {
-          onResize();
-
-          if (mq && mq.addListener) {
-            mq.addListener(onResize);
-          }
-        };
-
-        dummySrc.srcset =
-          "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
-
-        if (/^[c|i]|d$/.test(document.readyState || "")) {
-          init();
-        } else {
-          document.addEventListener("DOMContentLoaded", init);
-        }
-
-        return onResize;
-      })()
+          return onResize;
+        })()
     );
   }
 })(window);
 
-/*! Picturefill - v3.0.2
+/* ! Picturefill - v3.0.2
  * http://scottjehl.github.io/picturefill
  * Copyright (c) 2015 https://github.com/scottjehl/picturefill/blob/master/Authors.txt;
  *  License: MIT
@@ -93,35 +104,37 @@
 
 (function (window, document, undefined) {
   // Enable strict mode
-  "use strict";
+  // eslint-disable-next-line strict
+  'use strict';
 
   // HTML shim|v it for old IE (IE9 will still need the HTML video tag workaround)
-  document.createElement("picture");
+  document.createElement('picture');
 
+  // eslint-disable-next-line one-var
   var warn, eminpx, alwaysCheckWDescriptor, evalId;
   // local object for method references and testing exposure
   var pf = {};
   var isSupportTestReady = false;
   var noop = function () {};
-  var image = document.createElement("img");
+  var image = document.createElement('img');
   var getImgAttr = image.getAttribute;
   var setImgAttr = image.setAttribute;
   var removeImgAttr = image.removeAttribute;
   var docElem = document.documentElement;
   var types = {};
   var cfg = {
-    //resource selection:
-    algorithm: "",
+    // resource selection:
+    algorithm: '',
   };
-  var srcAttr = "data-pfsrc";
-  var srcsetAttr = srcAttr + "set";
+  var srcAttr = 'data-pfsrc';
+  var srcsetAttr = srcAttr + 'set';
   // ua sniffing is done for undetectable img loading features,
   // to do some non crucial perf optimizations
   var ua = navigator.userAgent;
   var supportAbort =
     /rident/.test(ua) ||
     (/ecko/.test(ua) && ua.match(/rv\:(\d+)/) && RegExp.$1 > 35);
-  var curSrcProp = "currentSrc";
+  var curSrcProp = 'currentSrc';
   var regWDesc = /\s+\+?\d+(e\d+)?w/;
   var regSize = /(\([^)]+\))?\s*(.+)/;
   var setOptions = window.picturefillCFG;
@@ -130,8 +143,8 @@
    */
   // baseStyle also used by getEmValue (i.e.: width: 1em is important)
   var baseStyle =
-    "position:absolute;left:0;visibility:hidden;display:block;padding:0;border:none;font-size:1em;width:1em;overflow:hidden;clip:rect(0px, 0px, 0px, 0px)";
-  var fsCss = "font-size:100%!important;";
+    'position:absolute;left:0;visibility:hidden;display:block;padding:0;border:none;font-size:1em;width:1em;overflow:hidden;clip:rect(0px, 0px, 0px, 0px)';
+  var fsCss = 'font-size:100%!important;';
   var isVwDirty = true;
 
   var cssCache = {};
@@ -141,7 +154,7 @@
     px: 1,
     in: 96,
   };
-  var anchor = document.createElement("a");
+  var anchor = document.createElement('a');
   /**
    * alreadyRun flag used for setOptions. is it true setOptions will reevaluate
    * @type {boolean}
@@ -167,7 +180,7 @@
     if (obj.addEventListener) {
       obj.addEventListener(evt, fn, capture || false);
     } else if (obj.attachEvent) {
-      obj.attachEvent("on" + evt, fn);
+      obj.attachEvent('on' + evt, fn);
     }
   };
 
@@ -191,11 +204,11 @@
   // http://jsperf.com/whitespace-character/5
   function isSpace(c) {
     return (
-      c === "\u0020" || // space
-      c === "\u0009" || // horizontal tab
-      c === "\u000A" || // new line
-      c === "\u000C" || // form feed
-      c === "\u000D"
+      c === '\u0020' || // space
+      c === '\u0009' || // horizontal tab
+      c === '\u000A' || // new line
+      c === '\u000C' || // form feed
+      c === '\u000D'
     ); // carriage return
   }
 
@@ -220,37 +233,37 @@
 
     var buildStr = memoize(function (css) {
       return (
-        "return " +
+        'return ' +
         replace(
-          (css || "").toLowerCase(),
-          // interpret `and`
-          /\band\b/g,
-          "&&",
+            (css || '').toLowerCase(),
+            // interpret `and`
+            /\band\b/g,
+            '&&',
 
-          // interpret `,`
-          /,/g,
-          "||",
+            // interpret `,`
+            /,/g,
+            '||',
 
-          // interpret `min-` as >=
-          /min-([a-z-\s]+):/g,
-          "e.$1>=",
+            // interpret `min-` as >=
+            /min-([a-z-\s]+):/g,
+            'e.$1>=',
 
-          // interpret `max-` as <=
-          /max-([a-z-\s]+):/g,
-          "e.$1<=",
+            // interpret `max-` as <=
+            /max-([a-z-\s]+):/g,
+            'e.$1<=',
 
-          //calc value
-          /calc([^)]+)/g,
-          "($1)",
+            // calc value
+            /calc([^)]+)/g,
+            '($1)',
 
-          // interpret css values
-          /(\d+[\.]*[\d]*)([a-z]+)/g,
-          "($1 * e.$2)",
-          //make eval less evil
-          /^(?!(e.[a-z]|[0-9\.&=|><\+\-\*\(\)\/])).*/gi,
-          ""
+            // interpret css values
+            /(\d+[\.]*[\d]*)([a-z]+)/g,
+            '($1 * e.$2)',
+            // make eval less evil
+            /^(?!(e.[a-z]|[0-9\.&=|><\+\-\*\(\)\/])).*/gi,
+            ''
         ) +
-        ";"
+        ';'
       );
     });
 
@@ -261,11 +274,11 @@
         if (length && (parsedLength = css.match(regLength))) {
           cssCache[css] = parsedLength[1] * units[parsedLength[2]];
         } else {
-          /*jshint evil:true */
+          /* jshint evil:true */
           try {
-            cssCache[css] = new Function("e", buildStr(css))(units);
+            cssCache[css] = new Function('e', buildStr(css))(units);
           } catch (e) {}
-          /*jshint evil:false */
+          /* jshint evil:false */
         }
       }
       return cssCache[css];
@@ -275,7 +288,7 @@
   var setResolution = function (candidate, sizesattr) {
     if (candidate.w) {
       // h = means height: || descriptor.type === 'h' do not handle yet...
-      candidate.cWidth = pf.calcListLength(sizesattr || "100vw");
+      candidate.cWidth = pf.calcListLength(sizesattr || '100vw');
       candidate.res = candidate.w / candidate.cWidth;
     } else {
       candidate.res = candidate.d;
@@ -297,7 +310,7 @@
     var options = opt || {};
 
     if (options.elements && options.elements.nodeType === 1) {
-      if (options.elements.nodeName.toUpperCase() === "IMG") {
+      if (options.elements.nodeName.toUpperCase() === 'IMG') {
         options.elements = [options.elements];
       } else {
         options.context = options.elements;
@@ -308,8 +321,8 @@
     elements =
       options.elements ||
       pf.qsa(
-        options.context || document,
-        options.reevaluate || options.reselect ? pf.sel : pf.selShort
+          options.context || document,
+          options.reevaluate || options.reselect ? pf.sel : pf.selShort
       );
 
     if ((plen = elements.length)) {
@@ -333,18 +346,18 @@
   warn =
     window.console && console.warn
       ? function (message) {
-          console.warn(message);
-        }
+        console.warn(message);
+      }
       : noop;
 
   if (!(curSrcProp in image)) {
-    curSrcProp = "src";
+    curSrcProp = 'src';
   }
 
   // Add support for standard mime types.
-  types["image/jpeg"] = true;
-  types["image/gif"] = true;
-  types["image/png"] = true;
+  types['image/jpeg'] = true;
+  types['image/gif'] = true;
+  types['image/png'] = true;
 
   function detectTypeSupport(type, typeUri) {
     // based on Modernizr's lossless img-webp test
@@ -359,13 +372,13 @@
       picturefill();
     };
     image.src = typeUri;
-    return "pending";
+    return 'pending';
   }
 
   // test svg support
-  types["image/svg+xml"] = document.implementation.hasFeature(
-    "http://www.w3.org/TR/SVG11/feature#Image",
-    "1.1"
+  types['image/svg+xml'] = document.implementation.hasFeature(
+      'http://www.w3.org/TR/SVG11/feature#Image',
+      '1.1'
   );
 
   /**
@@ -385,7 +398,7 @@
     units.vw = units.width / 100;
     units.vh = units.height / 100;
 
-    evalId = [units.height, units.width, DPR].join("-");
+    evalId = [units.height, units.width, DPR].join('-');
 
     units.em = pf.getEmValue();
     units.rem = units.em;
@@ -394,8 +407,8 @@
   function chooseLowRes(lowerValue, higherValue, dprValue, isCached) {
     var bonusFactor, tooMuch, bonus, meanDensity;
 
-    //experimental
-    if (cfg.algorithm === "saveData") {
+    // experimental
+    if (cfg.algorithm === 'saveData') {
       if (lowerValue > 2.7) {
         meanDensity = dprValue + 1;
       } else {
@@ -422,7 +435,7 @@
     var srcSetCandidates;
     var matchingSet = pf.getSet(img);
     var evaluated = false;
-    if (matchingSet !== "pending") {
+    if (matchingSet !== 'pending') {
       evaluated = evalId;
       if (matchingSet) {
         srcSetCandidates = pf.setRes(matchingSet);
@@ -478,20 +491,20 @@
     // SPEC mismatch intended for size and perf:
     // actually only source elements preceding the img should be used
     // also note: don't use qsa here, because IE8 sometimes doesn't like source as the key part in a selector
-    var sources = picture.getElementsByTagName("source");
+    var sources = picture.getElementsByTagName('source');
 
     for (i = 0, len = sources.length; i < len; i++) {
       source = sources[i];
       source[pf.ns] = true;
-      srcset = source.getAttribute("srcset");
+      srcset = source.getAttribute('srcset');
 
       // if source does not have a srcset attribute, skip
       if (srcset) {
         candidates.push({
           srcset: srcset,
-          media: source.getAttribute("media"),
-          type: source.getAttribute("type"),
-          sizes: source.getAttribute("sizes"),
+          media: source.getAttribute('media'),
+          type: source.getAttribute('type'),
+          sizes: source.getAttribute('sizes'),
         });
       }
     }
@@ -513,6 +526,7 @@
   // nothing to do with parsing proper, I would prefer this assignment eventually
   // go in an external fn.)
   function parseSrcset(input, set) {
+    // eslint-disable-next-line consistent-return
     function collectCharacters(regEx) {
       var chars,
         match = regEx.exec(input.substring(pos));
@@ -571,7 +585,7 @@
 
         // If the descriptor consists of a valid non-negative integer followed by
         // a U+0077 LATIN SMALL LETTER W character
-        if (regexNonNegativeInteger.test(value) && lastChar === "w") {
+        if (regexNonNegativeInteger.test(value) && lastChar === 'w') {
           // If width and density are not both absent, then let error be yes.
           if (w || d) {
             pError = true;
@@ -588,7 +602,7 @@
 
           // If the descriptor consists of a valid floating-point number followed by
           // a U+0078 LATIN SMALL LETTER X character
-        } else if (regexFloatingPoint.test(value) && lastChar === "x") {
+        } else if (regexFloatingPoint.test(value) && lastChar === 'x') {
           // If width, density and future-compat-h are not all absent, then let error
           // be yes.
           if (w || d || h) {
@@ -606,7 +620,7 @@
 
           // If the descriptor consists of a valid non-negative integer followed by
           // a U+0068 LATIN SMALL LETTER H character
-        } else if (regexNonNegativeInteger.test(value) && lastChar === "h") {
+        } else if (regexNonNegativeInteger.test(value) && lastChar === 'h') {
           // If height and density are not both absent, then let error be yes.
           if (h || d) {
             pError = true;
@@ -665,11 +679,12 @@
       collectCharacters(regexLeadingSpaces);
 
       // 8.2. Let current descriptor be the empty string.
-      currentDescriptor = "";
+      currentDescriptor = '';
 
       // 8.3. Let state be in descriptor.
-      state = "in descriptor";
+      state = 'in descriptor';
 
+      // eslint-disable-next-line no-constant-condition
       while (true) {
         // 8.4. Let c be the character at position.
         c = input.charAt(pos);
@@ -679,7 +694,7 @@
         //  that position is past the end of input.
 
         // In descriptor
-        if (state === "in descriptor") {
+        if (state === 'in descriptor') {
           // Do the following, depending on the value of c:
 
           // Space character
@@ -689,15 +704,15 @@
           if (isSpace(c)) {
             if (currentDescriptor) {
               descriptors.push(currentDescriptor);
-              currentDescriptor = "";
-              state = "after descriptor";
+              currentDescriptor = '';
+              state = 'after descriptor';
             }
 
             // U+002C COMMA (,)
             // Advance position to the next character in input. If current descriptor
             // is not empty, append current descriptor to descriptors. Jump to the step
             // labeled descriptor parser.
-          } else if (c === ",") {
+          } else if (c === ',') {
             pos += 1;
             if (currentDescriptor) {
               descriptors.push(currentDescriptor);
@@ -707,14 +722,14 @@
 
             // U+0028 LEFT PARENTHESIS (()
             // Append c to current descriptor. Set state to in parens.
-          } else if (c === "\u0028") {
+          } else if (c === '\u0028') {
             currentDescriptor = currentDescriptor + c;
-            state = "in parens";
+            state = 'in parens';
 
             // EOF
             // If current descriptor is not empty, append current descriptor to
             // descriptors. Jump to the step labeled descriptor parser.
-          } else if (c === "") {
+          } else if (c === '') {
             if (currentDescriptor) {
               descriptors.push(currentDescriptor);
             }
@@ -729,17 +744,17 @@
           // (end "in descriptor"
 
           // In parens
-        } else if (state === "in parens") {
+        } else if (state === 'in parens') {
           // U+0029 RIGHT PARENTHESIS ())
           // Append c to current descriptor. Set state to in descriptor.
-          if (c === ")") {
+          if (c === ')') {
             currentDescriptor = currentDescriptor + c;
-            state = "in descriptor";
+            state = 'in descriptor';
 
             // EOF
             // Append current descriptor to descriptors. Jump to the step labeled
             // descriptor parser.
-          } else if (c === "") {
+          } else if (c === '') {
             descriptors.push(currentDescriptor);
             parseDescriptors();
             return;
@@ -751,19 +766,19 @@
           }
 
           // After descriptor
-        } else if (state === "after descriptor") {
+        } else if (state === 'after descriptor') {
           // Do the following, depending on the value of c:
           // Space character: Stay in this state.
           if (isSpace(c)) {
             // EOF: Jump to the step labeled descriptor parser.
-          } else if (c === "") {
+          } else if (c === '') {
             parseDescriptors();
             return;
 
             // Anything else
             // Set state to in descriptor. Set position to the previous character in input.
           } else {
-            state = "in descriptor";
+            state = 'in descriptor';
             pos -= 1;
           }
         }
@@ -796,8 +811,8 @@
       // 8. If url ends with a U+002C COMMA character (,), follow these substeps:
       //		(1). Remove all trailing U+002C COMMA characters from url. If this removed
       //         more than one character, that is a parse error.
-      if (url.slice(-1) === ",") {
-        url = url.replace(regexTrailingCommas, "");
+      if (url.slice(-1) === ',') {
+        url = url.replace(regexTrailingCommas, '');
         // (Jump ahead to step 9 to skip tokenization and just push the candidate).
         parseDescriptors();
 
@@ -868,7 +883,7 @@
     //  Returns an array of arrays.)
     function parseComponentValues(str) {
       var chrctr;
-      var component = "";
+      var component = '';
       var componentArray = [];
       var listArray = [];
       var parenDepth = 0;
@@ -878,7 +893,7 @@
       function pushComponent() {
         if (component) {
           componentArray.push(component);
-          component = "";
+          component = '';
         }
       }
 
@@ -893,13 +908,13 @@
       while (true) {
         chrctr = str.charAt(pos);
 
-        if (chrctr === "") {
+        if (chrctr === '') {
           // ( End of string reached.)
           pushComponent();
           pushComponentArray();
           return listArray;
         } else if (inComment) {
-          if (chrctr === "*" && str[pos + 1] === "/") {
+          if (chrctr === '*' && str[pos + 1] === '/') {
             // (At end of a comment.)
             inComment = false;
             pos += 2;
@@ -925,18 +940,18 @@
             continue;
           } else {
             // (Replace any space character with a plain space for legibility.)
-            chrctr = " ";
+            chrctr = ' ';
           }
-        } else if (chrctr === "(") {
+        } else if (chrctr === '(') {
           parenDepth += 1;
-        } else if (chrctr === ")") {
+        } else if (chrctr === ')') {
           parenDepth -= 1;
-        } else if (chrctr === ",") {
+        } else if (chrctr === ',') {
           pushComponent();
           pushComponentArray();
           pos += 1;
           continue;
-        } else if (chrctr === "/" && str.charAt(pos + 1) === "*") {
+        } else if (chrctr === '/' && str.charAt(pos + 1) === '*') {
           inComment = true;
           pos += 2;
           continue;
@@ -957,7 +972,7 @@
       // ( http://www.w3.org/TR/CSS2/syndata.html#numbers says:
       // "-0 is equivalent to 0 and is not a negative number." which means that
       // unitless zero and unitless negative zero must be accepted as special cases.)
-      if (s === "0" || s === "-0" || s === "+0") {
+      if (s === '0' || s === '-0' || s === '+0') {
         return true;
       }
       return false;
@@ -1013,7 +1028,7 @@
       // and the payoff is unclear. Is there ever an situation where the
       // media condition parses incorrectly but still somehow evaluates to true?
       // Can we just rely on the browser/polyfill to do it?)
-      unparsedSize = unparsedSize.join(" ");
+      unparsedSize = unparsedSize.join(' ');
       if (!pf.matchesMedia(unparsedSize)) {
         continue;
       }
@@ -1024,36 +1039,36 @@
 
     // If the above algorithm exhausts unparsed sizes list without returning a
     // size value, return 100vw.
-    return "100vw";
+    return '100vw';
   }
 
   // namespace
-  pf.ns = ("pf" + new Date().getTime()).substr(0, 9);
+  pf.ns = ('pf' + new Date().getTime()).substr(0, 9);
 
   // srcset support test
-  pf.supSrcset = "srcset" in image;
-  pf.supSizes = "sizes" in image;
+  pf.supSrcset = 'srcset' in image;
+  pf.supSizes = 'sizes' in image;
   pf.supPicture = !!window.HTMLPictureElement;
 
   // UC browser does claim to support srcset and picture, but not sizes,
   // this extended test reveals the browser does support nothing
   if (pf.supSrcset && pf.supPicture && !pf.supSizes) {
     (function (image2) {
-      image.srcset = "data:,a";
-      image2.src = "data:,a";
+      image.srcset = 'data:,a';
+      image2.src = 'data:,a';
       pf.supSrcset = image.complete === image2.complete;
       pf.supPicture = pf.supSrcset && pf.supPicture;
-    })(document.createElement("img"));
+    })(document.createElement('img'));
   }
 
   // Safari9 has basic support for sizes, but does't expose the `sizes` idl attribute
   if (pf.supSrcset && !pf.supSizes) {
     (function () {
       var width2 =
-        "data:image/gif;base64,R0lGODlhAgABAPAAAP///wAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==";
+        'data:image/gif;base64,R0lGODlhAgABAPAAAP///wAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==';
       var width1 =
-        "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
-      var img = document.createElement("img");
+        'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+      var img = document.createElement('img');
       var test = function () {
         var width = img.width;
 
@@ -1070,9 +1085,9 @@
 
       img.onload = test;
       img.onerror = test;
-      img.setAttribute("sizes", "9px");
+      img.setAttribute('sizes', '9px');
 
-      img.srcset = width1 + " 1w," + width2 + " 9w";
+      img.srcset = width1 + ' 1w,' + width2 + ' 9w';
       img.src = width1;
     })();
   } else {
@@ -1081,7 +1096,7 @@
 
   // using pf.qsa instead of dom traversing does scale much better,
   // especially on sites mixing responsive and non-responsive images
-  pf.selShort = "picture>img,img[srcset]";
+  pf.selShort = 'picture>img,img[srcset]';
   pf.sel = pf.selShort;
   pf.cfg = cfg;
 
@@ -1115,7 +1130,7 @@
    * @returns {NodeList|Array}
    */
   pf.qsa = function (context, sel) {
-    return "querySelector" in context ? context.querySelectorAll(sel) : [];
+    return 'querySelector' in context ? context.querySelectorAll(sel) : [];
   };
 
   /**
@@ -1124,7 +1139,7 @@
    * @returns {boolean}
    */
   pf.matchesMedia = function () {
-    if (window.matchMedia && (matchMedia("(min-width: 0.1em)") || {}).matches) {
+    if (window.matchMedia && (matchMedia('(min-width: 0.1em)') || {}).matches) {
       pf.matchesMedia = function (media) {
         return !media || matchMedia(media).matches;
       };
@@ -1177,7 +1192,7 @@
    * @returns {*}
    */
   pf.parseSize = memoize(function (sourceSizeStr) {
-    var match = (sourceSizeStr || "").match(regSize);
+    var match = (sourceSizeStr || '').match(regSize);
     return {
       media: match && match[1],
       length: match && match[2],
@@ -1199,7 +1214,7 @@
   pf.getEmValue = function () {
     var body;
     if (!eminpx && (body = document.body)) {
-      var div = document.createElement("div"),
+      var div = document.createElement('div'),
         originalHTMLCSS = docElem.style.cssText,
         originalBodyCSS = body.style.cssText;
 
@@ -1214,7 +1229,7 @@
       eminpx = div.offsetWidth;
       body.removeChild(div);
 
-      //also update eminpx before returning
+      // also update eminpx before returning
       eminpx = parseFloat(eminpx, 10);
 
       // restore the original values
@@ -1321,10 +1336,10 @@
             candidates[j] &&
             (abortCurSrc || curSrc !== pf.makeUrl(candidate.url)) &&
             chooseLowRes(
-              candidates[j].res,
-              candidate.res,
-              dpr,
-              candidates[j].cached
+                candidates[j].res,
+                candidate.res,
+                dpr,
+                candidates[j].cached
             )
           ) {
             bestCandidate = candidates[j];
@@ -1354,9 +1369,9 @@
     img.src = bestCandidate.url;
 
     // although this is a specific Safari issue, we don't want to take too much different code paths
-    if (bestCandidate.set.type === "image/svg+xml") {
+    if (bestCandidate.set.type === 'image/svg+xml') {
       origWidth = img.style.width;
-      img.style.width = img.offsetWidth + 1 + "px";
+      img.style.width = img.offsetWidth + 1 + 'px';
 
       // next line only should trigger a repaint
       // if... is only done to trick dead code removal
@@ -1382,7 +1397,7 @@
         continue;
       }
 
-      if (supportsType === "pending") {
+      if (supportsType === 'pending') {
         set = supportsType;
       }
 
@@ -1396,11 +1411,11 @@
   pf.parseSets = function (element, parent, options) {
     var srcsetAttribute, imageSet, isWDescripor, srcsetParsed;
 
-    var hasPicture = parent && parent.nodeName.toUpperCase() === "PICTURE";
+    var hasPicture = parent && parent.nodeName.toUpperCase() === 'PICTURE';
     var imageData = element[pf.ns];
 
     if (imageData.src === undefined || options.src) {
-      imageData.src = getImgAttr.call(element, "src");
+      imageData.src = getImgAttr.call(element, 'src');
       if (imageData.src) {
         setImgAttr.call(element, srcAttr, imageData.src);
       } else {
@@ -1414,7 +1429,7 @@
       !pf.supSrcset ||
       element.srcset
     ) {
-      srcsetAttribute = getImgAttr.call(element, "srcset");
+      srcsetAttribute = getImgAttr.call(element, 'srcset');
       imageData.srcset = srcsetAttribute;
       srcsetParsed = true;
     }
@@ -1429,14 +1444,14 @@
     if (imageData.srcset) {
       imageSet = {
         srcset: imageData.srcset,
-        sizes: getImgAttr.call(element, "sizes"),
+        sizes: getImgAttr.call(element, 'sizes'),
       };
 
       imageData.sets.push(imageSet);
 
       isWDescripor =
         (alwaysCheckWDescriptor || imageData.src) &&
-        regWDesc.test(imageData.srcset || "");
+        regWDesc.test(imageData.srcset || '');
 
       // add normal src as candidate, if source has no w descriptor
       if (
@@ -1445,7 +1460,7 @@
         !getCandidateForSrc(imageData.src, imageSet) &&
         !imageSet.has1x
       ) {
-        imageSet.srcset += ", " + imageData.src;
+        imageSet.srcset += ', ' + imageData.src;
         imageSet.cands.push({
           url: imageData.src,
           d: 1,
@@ -1473,7 +1488,7 @@
     if (srcsetParsed && pf.supSrcset && !imageData.supported) {
       if (srcsetAttribute) {
         setImgAttr.call(element, srcsetAttr, srcsetAttribute);
-        element.srcset = "";
+        element.srcset = '';
       } else {
         removeImgAttr.call(element, srcsetAttr);
       }
@@ -1486,7 +1501,7 @@
         element.src !== pf.makeUrl(imageData.src))
     ) {
       if (imageData.src === null) {
-        element.removeAttribute("src");
+        element.removeAttribute('src');
       } else {
         element.src = imageData.src;
       }
@@ -1541,9 +1556,9 @@
       var regReady = window.attachEvent ? /d$|^c/ : /d$|^c|^i/;
 
       var run = function () {
-        var readyState = document.readyState || "";
+        var readyState = document.readyState || '';
 
-        timerId = setTimeout(run, readyState === "loading" ? 200 : 999);
+        timerId = setTimeout(run, readyState === 'loading' ? 200 : 999);
         if (document.body) {
           pf.fillImgs();
           isDomReady = isDomReady || regReady.test(readyState);
@@ -1589,13 +1604,13 @@
         }
       };
 
-      on(window, "resize", debounce(onResize, 99));
-      on(document, "readystatechange", run);
+      on(window, 'resize', debounce(onResize, 99));
+      on(document, 'readystatechange', run);
     })();
   }
 
   pf.picturefill = picturefill;
-  //use this internally for easy monkey patching/performance testing
+  // use this internally for easy monkey patching/performance testing
   pf.fillImgs = picturefill;
   pf.teardownRun = noop;
 
@@ -1606,12 +1621,12 @@
     pf: pf,
     push: function (args) {
       var name = args.shift();
-      if (typeof pf[name] === "function") {
+      if (typeof pf[name] === 'function') {
         pf[name].apply(pf, args);
       } else {
         cfg[name] = args[0];
         if (alreadyRun) {
-          pf.fillImgs({ reselect: true });
+          pf.fillImgs({reselect: true});
         }
       }
     },
@@ -1625,21 +1640,21 @@
   window.picturefill = picturefill;
 
   /* expose picturefill */
-  if (typeof module === "object" && typeof module.exports === "object") {
+  if (typeof module === 'object' && typeof module.exports === 'object') {
     // CommonJS, just export
     module.exports = picturefill;
-  } else if (typeof define === "function" && define.amd) {
+  } else if (typeof define === 'function' && define.amd) {
     // AMD support
-    define("picturefill", function () {
+    define('picturefill', function () {
       return picturefill;
     });
   }
 
   // IE8 evals this sync, so it must be the last thing we do
   if (!pf.supPicture) {
-    types["image/webp"] = detectTypeSupport(
-      "image/webp",
-      "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA=="
+    types['image/webp'] = detectTypeSupport(
+        'image/webp',
+        'data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA=='
     );
   }
 })(window, document);
