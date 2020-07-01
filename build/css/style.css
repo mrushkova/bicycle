@@ -773,7 +773,7 @@ body.lock {
 
 @media screen and (max-width: 1413px) {
   .about__body {
-    padding: 150px 90px 30px 90px; } }
+    padding: 150px 90px; } }
 
 .about__body h2 {
   font-weight: 600;
