@@ -767,10 +767,13 @@ body.lock {
 .about__body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   padding: 150px 137px;
   max-width: 1166px;
   margin: 0 auto; }
+
+@media screen and (max-width: 1413px) {
+  .about__body {
+    padding: 150px 90px 30px 90px; } }
 
 .about__body h2 {
   font-weight: 600;
@@ -787,7 +790,7 @@ body.lock {
 .about__list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -795,9 +798,15 @@ body.lock {
 
 .about__fact {
   position: relative;
-  width: 22.55%;
+  width: 22.5%;
   padding-top: 50px;
-  text-align: center; }
+  text-align: center;
+  margin-right: 38px;
+  max-width: 263px; }
+
+@media screen and (max-width: 1413px) {
+  .about__fact {
+    margin-right: 28px; } }
 
 .about__fact::before {
   content: "0" counter(my-counter);
