@@ -40,6 +40,14 @@
   color: #0ad9c6;
 }
 
+.menu__li {
+  margin-right: 20px;
+}
+
+.menu__li:nth-child(4) {
+  margin-right: 0;
+}
+
 @media only screen and (max-width: 1023px) {
   .menu {
     height: 100vh;
@@ -79,6 +87,7 @@
 
   .menu__li {
     position: relative;
+    margin-right: 0;
   }
 
   .menu__li::after {
