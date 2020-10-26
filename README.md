@@ -16,6 +16,7 @@
 - Non-standard fonts are connected locally.
 - JavaScript: mobile menu, form validation.
 - Other: layout made by Pixel Perfect, used webP and SVG graphics, used SVG sprite, retinized bitmap graphics, optimization and accessibility improvements.
+- Content language: Russian. 
 
 
 
