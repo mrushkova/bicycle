@@ -1,39 +1,21 @@
 
 ![W3C Validation](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2Fmrushkova.github.io%2Fbicycle%2F)
 
-# Проект Велосипеды
+# Project Bicycles
 
-## Техническое задание
-- Стандарты вёрстки: HTML5, CSS3, прогрессивное улучшение.
-- Сетка: определена в макете.
-- Раскладка блоков на странице делается с помощью Flexbox.
-- Адаптивность сетки: мобильная, планшетная и десктопная версии. Desktop First. На всех промежуточных разрешениях используется резиновая вёрстка.
-- Используемая методология: БЭМ.
-- Используемые фреймворки: нет.
-- Используемый препроцессор: Sass (SCSS).
-- Используемый инструмент автоматизации: Gulp.
-- Кроссбраузерность: Chrome, Firefox, Safari, Edge, Internet Explorer 11.
-- Макет предоставляется в Figma. Графика не предоставляется и её необходимо вырезать из макета самостоятельно.
-- Нестандартные шрифты подключены локально.
-- JavaScript: мобильное меню, валидация формы.
-- Прочее: вёрстка сделана Pixel Perfect, использована webP и SVG-графика, использован SVG-спрайт, выполнена ретинизация растровой графики, проведена работа по оптимизации и улучшению доступности.
+## Technical task
+- Layout standards: HTML5, CSS3, progressive enhancement.
+- Grid: defined in the layout.
+- Layout of blocks on the page is done using Flexbox.
+- Responsiveness of the grid: mobile, tablet and desktop versions. Desktop first. All intermediate resolutions use a rubber layout.
+- Methodology: BEM.
+- Preprocessor: Sass (SCSS).
+- Automation tool: Gulp.
+- Cross-browser compatibility: Chrome, Firefox, Safari, Edge, Internet Explorer 11.
+- Layout is provided in Figma.
+- Non-standard fonts are connected locally.
+- JavaScript: mobile menu, form validation.
+- Other: layout made by Pixel Perfect, used webP and SVG graphics, used SVG sprite, retinized bitmap graphics, optimization and accessibility improvements.
 
-## Краткая инструкция по работе
 
-### Для начала работы у вас должен быть установлен:
-
-- Node.js v.10.15.3
-- Gulp v4
-- npm last version
-
-## Основные команды для работы
-
-- Установка - `npm i`
-- Запуск локального сервера - `npm start`
-- Сборка проекта без запуска локального сервера - `npm run-script build`
-- Запуск тестирования на соответствия код-гайдам - `npm test`
-
-### Все разработка ведётся в директории `source`
-
-### Итоговый код попадает в директорию `build`
 
