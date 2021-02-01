@@ -2,6 +2,7 @@
 ![W3C Validation](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2Fmrushkova.github.io%2Fbicycle%2F)
 
 # Project Bicycles
+Prototype for a [landing page](https://mrushkova.github.io/bicycle/) of the bicycle store in Russia.
 
 ## Technical task
 - Layout standards: HTML5, CSS3, progressive enhancement.
